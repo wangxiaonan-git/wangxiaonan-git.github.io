@@ -24,7 +24,7 @@ short_bio: >-
   I am particularly interested in how language models perform across different languages and cultures, and how evaluation can promote their adaptability, accuracy, and safety.<br/><br/>
   By combining linguistics and AI, I aim to build reliable and inclusive benchmarks that reflect the complexities of real-world language use.
 
-show_portrait: False
+show_portrait: True
 portrait_url: assets/images/photos/photo.png
 #portrait_caption: >-
 #  我是王荣胜，欢迎访问我的主页~
