@@ -30,14 +30,14 @@ portrait_url: assets/images/photos/photo.png
 #  我是王荣胜，欢迎访问我的主页~
 
 education:
-- name: Macao Polytechnic University
-  logo: assets/images/badges/mpu_master.png
-  position: M.S. in Big Data and Internet of Things
-  date: Sep. 2022 - Jul. 2024
-- name: Henan Polytechnic University
-  logo: assets/images/badges/hpu_bs.png
-  position: B.S. in Computer Science (AI)
-  date: Sep. 2018 - Jul. 2022
+- name: Yonsei University
+  logo: assets/images/badges/yonsei.png
+  position: M.S. in Computational Linguistics
+  date: 2024
+- name: Hankuk University of Foreign Studies
+  logo: assets/images/badges/HUFS.png
+  position: B.A. in English Interpreting and Translation
+  date: 2020
   
 experience:
 # - name: CUHK (SZ)
