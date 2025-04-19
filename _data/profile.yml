@@ -44,13 +44,10 @@ education:
   date: 2020
   
 experience:
-# - name: CUHK (SZ)
-#   logo: assets/images/badges/cuhk-sz.png
-#   position: Research Assistant (Supervisor is <a href="https://wabyking.github.io/old.html">Benyou Wang</a>)
-#   date: Sep. 2024 - Now
-- name: Korean Data and Resource Center, Yonsei University
-  position: Research Intern
-  date: Dec. 2024 - Now
+  - name: CUHK (SZ)
+    logo: assets/images/badges/cuhk-sz.png
+    position: Research Assistant (Supervisor is <a href="https://wabyking.github.io/old.html">Benyou Wang</a>)
+    date: Sep. 2024 - Now
 
 
 awards:
