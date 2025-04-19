@@ -2,36 +2,34 @@
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-5">
-                <div class="row">
-                    <div class="col">
-                        <p class="h1 font-weight-normal">{{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small></p>
-                        <p class="text-profile-position">
-                            {% for position in site.data.profile.positions %}
-                            {{ position }}<br/>
-                            {% endfor %}
-                            {% if site.data.profile.cv_link %}
-                            <a target="_blank" href="{{ site.data.profile.cv_link }}"><i class="fas fa-file-alt"></i> [Curriculum Vitae]</a> <br/>
-                            {% endif %}
-                        </p>
-                        <p class="text-profile-bio">
-                            {{ site.data.profile.short_bio }}
-                        </p>
-                    </div>
-                    {% if site.data.profile.show_portrait %}
-                    <div class="col-md-auto d-none d-md-block" style="text-align: right;">
-                        <figure class="figure">
-                            <img 
-                                src="{{ site.data.profile.portrait_url }}" 
-                                class="figure-img img-fluid" 
-                                style="height: 200px;"
-                                data-toggle="tooltip" 
-                                data-placement="top" 
-                                title="{{ site.data.profile.portrait_caption }}"
-                            >
-                            <figcaption class="figure-caption text-right"></figcaption>
-                        </figure>
-                    </div>
-                    {% endif %}
+<div class="row">
+    <div class="col">
+        {% if site.data.profile.show_portrait %}
+        <div style="float: right; margin-left: 30px;">
+            <img 
+                src="{{ site.data.profile.portrait_url }}" 
+                style="height: 200px; border-radius: 50%;" 
+                alt="Portrait"
+                title="{{ site.data.profile.portrait_caption }}"
+            >
+        </div>
+        {% endif %}
+
+        <p class="h1 font-weight-normal">{{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small></p>
+        <p class="text-profile-position">
+            {% for position in site.data.profile.positions %}
+            {{ position }}<br/>
+            {% endfor %}
+            {% if site.data.profile.cv_link %}
+            <a target="_blank" href="{{ site.data.profile.cv_link }}"><i class="fas fa-file-alt"></i> [Curriculum Vitae]</a> <br/>
+            {% endif %}
+        </p>
+        <p class="text-profile-bio">
+            {{ site.data.profile.short_bio }}
+        </p>
+    </div>
+</div>
+
         
                 </div>
                 <hr />
