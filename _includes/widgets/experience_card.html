@@ -30,7 +30,7 @@
           <div class="col-md-6">
             <div class="mx-2 my-1">
               <h6>Honors & Awards</h6>
-              <ul class="list small pl-3 mb-2">
+              <ul class="list small mb-2">
                 {% for item in site.data.profile.awards %}
                 <li class="d-flex justify-content-between">
                   <span>{{ item.name }}</span>
@@ -42,9 +42,9 @@
           </div>
           {% endif %}
 
-          <!-- 工作/实习 -->
-          {% if site.data.profile.experience %}
+          <!-- 实习 & Travel（并列） -->
           <div class="col-md-6">
+            {% if site.data.profile.experience %}
             <div class="mx-2 my-1">
               <h6>Experience</h6>
               <ul class="list-unstyled mb-2">
@@ -59,8 +59,19 @@
                 {% endfor %}
               </ul>
             </div>
+            {% endif %}
+
+            {% if site.data.profile.service %}
+            <div class="mx-2 my-1">
+              <h6>Travel</h6>
+              <ul class="list small mb-0">
+                {% for item in site.data.profile.service %}
+                <li>{{ item.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
           </div>
-          {% endif %}
 
           <!-- 语言能力 -->
           {% if site.data.profile.spoken_languages %}
@@ -78,20 +89,6 @@
                     {% endif %}
                   </span>
                 </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          {% endif %}
-
-          <!-- Travel -->
-          {% if site.data.profile.service %}
-          <div class="col-md-6">
-            <div class="mx-2 my-1 mt-3">
-              <h6>Travel</h6>
-              <ul class="list small pl-3 mb-0">
-                {% for item in site.data.profile.service %}
-                <li>{{ item.name }}</li>
                 {% endfor %}
               </ul>
             </div>
