@@ -4,92 +4,98 @@
       <div class="card-body p-4">
         <div class="row">
 
-          <!-- Education -->
+          <!-- 教育经历 -->
           {% if site.data.profile.education %}
-            <div class="col-md-6">
-              <div class="mx-2 my-1">
-                <h6>Education</h6>
-                <ul class="list-unstyled mb-1">
-                  {% for item in site.data.profile.education %}
-                    <li class="media mb-1">
-                      <img src="{{ item.logo }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">
-                      <div class="media-body">
-                        <p class="my-0">{{ item.name }}</p>
-                        <p class="small my-0">{{ item.dept }}</p>
-                        <p class="small my-0">{{ item.position }} <em class="float-right">{{ item.date }}</em></p>
-                      </div>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
+          <div class="col-md-6">
+            <div class="mx-2 my-1">
+              <h6>Education</h6>
+              <ul class="list-unstyled mb-2">
+                {% for item in site.data.profile.education %}
+                <li class="media mb-1">
+                  <img src="{{ item.logo }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">
+                  <div class="media-body">
+                    <p class="my-0 font-weight-bold">{{ item.name }}</p>
+                    <p class="small my-0">{{ item.dept }}</p>
+                    <p class="small my-0">{{ item.position }} <em class="float-right">{{ item.date }}</em></p>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
             </div>
+          </div>
           {% endif %}
 
-          <!-- Honors & Awards -->
+          <!-- 奖项 -->
           {% if site.data.profile.awards %}
-            <div class="col-md-6">
-              <div class="mx-2 my-1">
-                <h6>Honors & Awards</h6>
-                <ul class="list small pl-3 mb-1">
-                  {% for item in site.data.profile.awards %}
-                    <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
-                  {% endfor %}
-                </ul>
-              </div>
+          <div class="col-md-6">
+            <div class="mx-2 my-1">
+              <h6>Honors & Awards</h6>
+              <ul class="list small pl-3 mb-2">
+                {% for item in site.data.profile.awards %}
+                <li class="d-flex justify-content-between">
+                  <span>{{ item.name }}</span>
+                  <em>{{ item.date }}</em>
+                </li>
+                {% endfor %}
+              </ul>
             </div>
+          </div>
           {% endif %}
 
-          <!-- Experience + Travel -->
+          <!-- 工作/实习 -->
           {% if site.data.profile.experience %}
-            <div class="col-md-6">
-              <div class="mx-2 my-1">
-                <h6>Experience</h6>
-                <ul class="list-unstyled mb-1">
-                  {% for item in site.data.profile.experience %}
-                    <li class="media mb-1">
-                      <div class="media-body">
-                        <p class="my-0">{{ item.name }}</p>
-                        <p class="small my-0">{{ item.dept }}</p>
-                        <p class="small my-0">{{ item.position }} <em class="float-right">{{ item.date }}</em></p>
-                      </div>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-
-              <div class="my-2"></div> <!-- spacing -->
-
-              <div class="mx-2 my-1">
-                <h6>Travel</h6>
-                <ul class="list small pl-3 mb-1">
-                  {% for item in site.data.profile.service %}
-                    <li>{{ item.name }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
+          <div class="col-md-6">
+            <div class="mx-2 my-1">
+              <h6>Experience</h6>
+              <ul class="list-unstyled mb-2">
+                {% for item in site.data.profile.experience %}
+                <li class="media mb-1">
+                  <div class="media-body">
+                    <p class="my-0 font-weight-bold">{{ item.name }}</p>
+                    <p class="small my-0">{{ item.dept }}</p>
+                    <p class="small my-0">{{ item.position }} <em class="float-right">{{ item.date }}</em></p>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
             </div>
+          </div>
           {% endif %}
 
-          <!-- Spoken Languages -->
+          <!-- 语言能力 -->
           {% if site.data.profile.spoken_languages %}
-            <div class="col-md-6">
-              <div class="mx-2 my-1">
-                <h6>Spoken Languages</h6>
-                <ul class="list-unstyled mb-1 small">
-                  {% for lang in site.data.profile.spoken_languages %}
-                    <li class="mb-1 d-flex justify-content-between">
-                      <strong class="mr-2">{{ lang.name }}</strong>
-                      <span>
-                        {{ lang.level }}
-                        {% if lang.comment %}
-                          — <span style="color: #666;">{{ lang.comment }}</span>
-                        {% endif %}
-                      </span>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
+          <div class="col-md-6">
+            <div class="mx-2 my-1">
+              <h6>Spoken Languages</h6>
+              <ul class="list-unstyled small mb-2">
+                {% for lang in site.data.profile.spoken_languages %}
+                <li class="d-flex justify-content-between mb-1">
+                  <strong>{{ lang.name }}</strong>
+                  <span>
+                    {{ lang.level }}
+                    {% if lang.comment %}
+                    – <span class="text-muted">{{ lang.comment }}</span>
+                    {% endif %}
+                  </span>
+                </li>
+                {% endfor %}
+              </ul>
             </div>
+          </div>
+          {% endif %}
+
+          <!-- Travel -->
+          {% if site.data.profile.service %}
+          <div class="col-md-6">
+            <div class="mx-2 my-1 mt-3">
+              <h6>Travel</h6>
+              <ul class="list small pl-3 mb-0">
+                {% for item in site.data.profile.service %}
+                <li>{{ item.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
           {% endif %}
 
         </div>
@@ -97,3 +103,4 @@
     </div>
   </div>
 </div>
+
