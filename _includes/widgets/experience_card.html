@@ -65,24 +65,27 @@
           </div>
           {% endif %}
 
-          {% if site.data.profile.spoken_languages %}
-          <div class="col-md-6">
-            <div class="mx-2 my-1">
-              <h6>Spoken Languages</h6>
-              <ul class="list-unstyled mb-1 small">
-                {% for lang in site.data.profile.spoken_languages %}
-                <li class="d-flex justify-content-between">
-                  <span><strong>{{ lang.name }}</strong></span>
-                  <span>{{ lang.level }}</span>
-                </li>
-                {% if lang.comment %}
-                <li class="text-muted pl-2" style="font-size: 0.85rem;">{{ lang.comment }}</li>
-                {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          {% endif %}
+{% if site.data.profile.spoken_languages %}
+<div class="col-md-6">
+  <div class="mx-2 my-1">
+    <h6>Spoken Languages</h6>
+    <ul class="list-unstyled mb-1 small">
+      {% for lang in site.data.profile.spoken_languages %}
+      <li class="mb-2">
+        <div class="d-flex justify-content-between">
+          <strong>{{ lang.name }}</strong>
+          <span>{{ lang.level }}</span>
+        </div>
+        {% if lang.comment %}
+        <div class="text-muted" style="font-size: 0.9rem; margin-left: 0.5rem;">{{ lang.comment }}</div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
 
         </div>
       </div>
