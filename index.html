@@ -14,28 +14,29 @@ num_selected: 10
   <div class="col">
     <div class="card border-0 shadow-sm bg-white">
       <div class="card-body p-4">
-        <h5><i class="fas fa-flask mr-2"></i>Research Project Experience</h5>
-        <ul class="list-unstyled mt-3">
+        <h6 class="text-muted">Research Project Experience</h6>
+        <ul class="list-unstyled mt-3 small">
           <li class="mb-3">
-            <strong>KIM Bench: Understanding Korean Idioms with Language Models</strong><br />
-            Created a 5-choice QA benchmark with 1,175 idioms to test language models’ understanding of Korean idioms.<br />
-            <em>Jan 2024 – Mar 2024</em>
+            <strong>Development of Personal Information De-identification Technology in Suspected Criminal Data: Early Detection Technology for Emerging Voice Phishing Scams</strong><br />
+            Funded by Institute of Information & communications Technology Planning & Evaluation, Republic of Korea.<br />
+            <em>May 01 2024 – Dec 31 2028</em>
           </li>
           <li class="mb-3">
-            <strong>ML-SciBench: Multilingual AI Detection Dataset</strong><br />
-            Built a dataset comparing human and AI-written abstracts in Chinese, Korean, and English for detecting AI-generated content.<br />
-            <em>Feb 2024 – Present</em>
+            <strong>Development of Multimodal Al-based Personal Information Detection, Tracking, and De-identification Technology</strong><br />
+            Funded by  KISA (Korean Internet & Security Agency), Ministry of Science and ICT, Republic of Korea.<br />
+            <em>Apr 01 2024 – Dec 31 2027</em>
           </li>
           <li class="mb-3">
-            <strong>Privacy & Bias in Korean VLM Geolocation</strong><br />
-            Collected Korean street view images to analyse privacy risks and regional bias in visual-language models.<br />
-            <em>Mar 2024 – Present</em>
+            <strong>Establishment of Localization Strategies for Overseas Datasets in AI Safety Evaluation</strong><br />
+            Funded by Telecommunications Technology Association (TTA), Republic of Korea.<br />
+            <em>Dec 12 2024 – Dec 31 2024</em>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+
 
 {% if site.data.display.homepage.show_selected_publications %}
     {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
