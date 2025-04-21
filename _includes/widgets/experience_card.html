@@ -63,7 +63,7 @@
 
                 {% if site.data.profile.spoken_languages %}
                 <h6 class="mb-2 mt-3">Spoken Languages</h6>
-                <div class="mx-2 my-1">
+                <ul class="list-unstyled mb-1 small">
                   {% for lang in site.data.profile.spoken_languages %}
                     <li class="d-flex justify-content-between">
                       <strong>{{ lang.name }}</strong>
@@ -84,4 +84,5 @@
     </div>
   </div>
 </div>
+
 
