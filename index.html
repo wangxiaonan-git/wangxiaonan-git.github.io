@@ -5,33 +5,31 @@ navbar_name: Home
 num_selected: 10
 ---
 
-<!-- Profile card 不参与动画 -->
+<!-- Profile card -->
 {% include widgets/profile_card.html %}
 
 {% if site.data.display.homepage.show_experience %}
-<div data-aos="fade-up">
-  {% include widgets/experience_card.html %}
-</div>
+{% include widgets/experience_card.html %}
 {% endif %}
 
-<!-- Research Project Section 动画 -->
-<div class="row mt-3" data-aos="fade-up">
+<!-- Research Project Section -->
+<div class="row mt-3">
   <div class="col">
     <div class="card border-0 shadow-sm bg-white">
       <div class="card-body p-4">
         <h6 style="color: black;">Research Project Experience</h6>
         <ul class="list-unstyled mt-3 small">
-          <li class="mb-3" data-aos="fade-up" data-aos-delay="100">
+          <li class="mb-3">
             <strong>Development of Personal Information De-identification Technology in Suspected Criminal Data: Early Detection Technology for Emerging Voice Phishing Scams</strong><br />
             Funded by Institute of Information & communications Technology Planning & Evaluation, Republic of Korea.<br />
             <em>May 01 2024 – Dec 31 2028</em>
           </li>
-          <li class="mb-3" data-aos="fade-up" data-aos-delay="200">
+          <li class="mb-3">
             <strong>Development of Multimodal Al-based Personal Information Detection, Tracking, and De-identification Technology</strong><br />
             Funded by  KISA (Korean Internet & Security Agency), Ministry of Science and ICT, Republic of Korea.<br />
             <em>Apr 01 2024 – Dec 31 2027</em>
           </li>
-          <li class="mb-3" data-aos="fade-up" data-aos-delay="300">
+          <li class="mb-3">
             <strong>Establishment of Localization Strategies for Overseas Datasets in AI Safety Evaluation</strong><br />
             Funded by Telecommunications Technology Association (TTA), Republic of Korea.<br />
             <em>Dec 12 2024 – Dec 31 2024</em>
@@ -42,14 +40,14 @@ num_selected: 10
   </div>
 </div>
 
-<!-- Publications Section 动画 -->
-<div class="row mt-3" data-aos="fade-up">
+<!-- Publications Section -->
+<div class="row mt-3">
   <div class="col">
     <div class="card border-0 shadow-sm bg-white">
       <div class="card-body p-4">
-        <h6 class="font-weight-bold mb-3" data-aos="fade-right">Publications</h6>
+        <h6 class="font-weight-bold mb-3">Publications</h6>
 
-        <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="mb-3">
           <h6 class="mb-1 d-flex align-items-center">
             <span>KULTURE Bench: A Benchmark for Assessing Language Model in Korean Cultural Context</span>
             <span class="badge ml-2" style="background-color: #f78fdd; color: white;">Culture</span>
