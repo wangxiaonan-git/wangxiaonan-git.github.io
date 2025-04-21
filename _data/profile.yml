@@ -74,15 +74,19 @@ service:
 footer_text: >-
   Copyright © 2025 Xiaonan Wang. All Rights Reserved.
 
-languages:
+spoken_languages:
   - name: Mandarin Chinese
     level: Native
+
   - name: English
     level: Full professional proficiency (C1)
     comment: IELTS: Listening 8.5, Reading 8, Speaking 7, Writing 7
+
   - name: Korean
     level: Full professional proficiency (C1)
     comment: TOPIK Level 6
+
   - name: Japanese
     level: Elementary (A1)
+
 
