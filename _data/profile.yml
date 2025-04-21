@@ -73,3 +73,22 @@ service:
 # if you keep the link to the template so that more people can benefit from it. Thanks!
 footer_text: >-
   Copyright © 2025 Xiaonan Wang. All Rights Reserved.
+
+{% if site.data.profile.languages %}
+<div class="col-md-6">
+    <div class="mx-2 my-1">
+        <h6>Spoken Languages</h6>
+        <ul class="list small pl-3 mb-1">
+            <li><strong>Mandarin Chinese</strong> – Native</li>
+            <li><strong>English</strong> – Full professional proficiency (C1) 
+                <br><span class="text-muted">IELTS: Listening 8.5, Reading 8, Speaking 7, Writing 7</span>
+            </li>
+            <li><strong>Korean</strong> – Full professional proficiency (C1) 
+                <br><span class="text-muted">TOPIK Level 6</span>
+            </li>
+            <li><strong>Japanese</strong> – Elementary (A1)</li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+
