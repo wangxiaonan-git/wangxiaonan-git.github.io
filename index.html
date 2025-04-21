@@ -4,29 +4,36 @@ title : Homepage
 navbar_name: Home
 num_selected: 10
 ---
-{% include widgets/profile_card.html %}
+
+<!-- Profile card 动画 -->
+<div data-aos="fade-up">
+  {% include widgets/profile_card.html %}
+</div>
 
 {% if site.data.display.homepage.show_experience %}
-{% include widgets/experience_card.html %}
+<div data-aos="fade-up">
+  {% include widgets/experience_card.html %}
+</div>
 {% endif %}
 
-<div class="row mt-3">
+<!-- Research Project Section 动画 -->
+<div class="row mt-3" data-aos="fade-up">
   <div class="col">
     <div class="card border-0 shadow-sm bg-white">
       <div class="card-body p-4">
         <h6 style="color: black;">Research Project Experience</h6>
         <ul class="list-unstyled mt-3 small">
-          <li class="mb-3">
+          <li class="mb-3" data-aos="fade-up" data-aos-delay="100">
             <strong>Development of Personal Information De-identification Technology in Suspected Criminal Data: Early Detection Technology for Emerging Voice Phishing Scams</strong><br />
             Funded by Institute of Information & communications Technology Planning & Evaluation, Republic of Korea.<br />
             <em>May 01 2024 – Dec 31 2028</em>
           </li>
-          <li class="mb-3">
+          <li class="mb-3" data-aos="fade-up" data-aos-delay="200">
             <strong>Development of Multimodal Al-based Personal Information Detection, Tracking, and De-identification Technology</strong><br />
             Funded by  KISA (Korean Internet & Security Agency), Ministry of Science and ICT, Republic of Korea.<br />
             <em>Apr 01 2024 – Dec 31 2027</em>
           </li>
-          <li class="mb-3">
+          <li class="mb-3" data-aos="fade-up" data-aos-delay="300">
             <strong>Establishment of Localization Strategies for Overseas Datasets in AI Safety Evaluation</strong><br />
             Funded by Telecommunications Technology Association (TTA), Republic of Korea.<br />
             <em>Dec 12 2024 – Dec 31 2024</em>
@@ -37,14 +44,14 @@ num_selected: 10
   </div>
 </div>
 
-
-<div class="row mt-3">
+<!-- Publications Section 动画 -->
+<div class="row mt-3" data-aos="fade-up">
   <div class="col">
     <div class="card border-0 shadow-sm bg-white">
       <div class="card-body p-4">
-        <h6 class="font-weight-bold mb-3">Publications</h6>
+        <h6 class="font-weight-bold mb-3" data-aos="fade-right">Publications</h6>
 
-        <div class="mb-3">
+        <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
           <h6 class="mb-1 d-flex align-items-center">
             <span>KULTURE Bench: A Benchmark for Assessing Language Model in Korean Cultural Context</span>
             <span class="badge ml-2" style="background-color: #f78fdd; color: white;">Culture</span>
@@ -62,8 +69,5 @@ num_selected: 10
   </div>
 </div>
 
-
-
+<!-- Visitor map -->
 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ede7e7&w=180&t=n&d=2hdELQUXGbZXhd7nU8b6DM0o0lTQDMdsI0TK710fQRU&co=6e9dbf&cmo=1b6de2&cmn=461b91&ct=1c1717"></script>
-
-
