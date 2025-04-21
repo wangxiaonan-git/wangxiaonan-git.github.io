@@ -10,12 +10,32 @@ num_selected: 10
 {% include widgets/experience_card.html %}
 {% endif %}
 
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-    {% endif %}
-{% endif %}
+<div class="row mt-3">
+  <div class="col">
+    <div class="card border-0 shadow-sm bg-white">
+      <div class="card-body p-4">
+        <h5><i class="fas fa-flask mr-2"></i>Research Project Experience</h5>
+        <ul class="list-unstyled mt-3">
+          <li class="mb-3">
+            <strong>KIM Bench: Understanding Korean Idioms with Language Models</strong><br />
+            Created a 5-choice QA benchmark with 1,175 idioms to test language models’ understanding of Korean idioms.<br />
+            <em>Jan 2024 – Mar 2024</em>
+          </li>
+          <li class="mb-3">
+            <strong>ML-SciBench: Multilingual AI Detection Dataset</strong><br />
+            Built a dataset comparing human and AI-written abstracts in Chinese, Korean, and English for detecting AI-generated content.<br />
+            <em>Feb 2024 – Present</em>
+          </li>
+          <li class="mb-3">
+            <strong>Privacy & Bias in Korean VLM Geolocation</strong><br />
+            Collected Korean street view images to analyse privacy risks and regional bias in visual-language models.<br />
+            <em>Mar 2024 – Present</em>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% if site.data.display.homepage.show_selected_publications %}
     {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
