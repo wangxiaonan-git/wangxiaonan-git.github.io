@@ -3,6 +3,7 @@
     <div class="card border-0 shadow-sm bg-white">
       <div class="card-body p-4">
         <div class="row">
+        
           {% if site.data.profile.education %}
           <div class="col-md-6">
             <div class="mx-2 my-1">
@@ -53,7 +54,6 @@
               </ul>
             </div>
 
-
             <div class="mx-2 my-1">
               <h6>Travel</h6>
               <ul class="list small pl-3 mb-1">
@@ -65,14 +65,19 @@
           </div>
           {% endif %}
 
-
           {% if site.data.profile.spoken_languages %}
           <div class="col-md-6">
             <div class="mx-2 my-1">
               <h6>Spoken Languages</h6>
-              <ul class="list small pl-3 mb-1">
+              <ul class="list-unstyled mb-1 small">
                 {% for lang in site.data.profile.spoken_languages %}
-                <li>{{ lang.name }}</li>
+                <li class="d-flex justify-content-between">
+                  <span><strong>{{ lang.name }}</strong></span>
+                  <span>{{ lang.level }}</span>
+                </li>
+                {% if lang.comment %}
+                <li class="text-muted pl-2" style="font-size: 0.85rem;">{{ lang.comment }}</li>
+                {% endif %}
                 {% endfor %}
               </ul>
             </div>
