@@ -78,14 +78,16 @@
                 <h6>Spoken Languages</h6>
                 <ul class="list-unstyled mb-1 small">
                   {% for lang in site.data.profile.spoken_languages %}
-                    <li class="mb-3">
+                    <li class="mb-2">
                       <div class="d-flex justify-content-between">
                         <strong>{{ lang.name }}</strong>
-                        <span>{{ lang.level }}</span>
+                        <span>
+                          {{ lang.level }}
+                          {% if lang.comment %}
+                            – <span class="text-muted">{{ lang.comment }}</span>
+                          {% endif %}
+                        </span>
                       </div>
-                      {% if lang.comment %}
-                        <div class="text-muted" style="font-size: 0.9rem; margin-left: 0.5rem;">{{ lang.comment }}</div>
-                      {% endif %}
                     </li>
                   {% endfor %}
                 </ul>
@@ -98,6 +100,5 @@
     </div>
   </div>
 </div>
-
 
 
