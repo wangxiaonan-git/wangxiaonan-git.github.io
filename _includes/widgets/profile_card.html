@@ -32,14 +32,19 @@
                         </figure>
                     </div>
                     {% endif %}
-        
                 </div>
+
                 <hr />
+                
                 <div class="row">
                     <div class="col">
-                        <a class="pr-3 no-break text-profile-bio text-reset" href="mailto:{{ site.data.profile.email | encode_email }}" style="text-decoration: none;">
-                            <i class="fas fa-at"></i>  <span>{{ site.data.profile.email | replace: "@", "(at)" }}</span>
-                        </a>
+                        <!-- Research interest tags -->
+                        <div class="text-profile-bio mt-2">
+                            <span class="badge badge-pill" style="background-color:#17a2b8; color: white;">Safety</span>
+                            <span class="badge badge-pill" style="background-color:#ffc107; color: black;">NLP</span>
+                            <span class="badge badge-pill" style="background-color:#ec9eff; color: white;">Culture</span>
+                            <span class="badge badge-pill" style="background-color:#6c757d; color: white;">Benchmark</span>
+                        </div>
 
                         {% if site.data.profile.gscholar %}
                         <a class="pr-3 no-break" target="_blank" href="https://scholar.google.com/citations?user={{ site.data.profile.gscholar }}&hl=en">
@@ -120,3 +125,4 @@
     </div>
 </div>
 {% endif %}
+
