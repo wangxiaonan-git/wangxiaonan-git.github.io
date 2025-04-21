@@ -3,7 +3,8 @@
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-5">
                 <div class="row">
-                    <div class="col">
+                    <!-- Left: Name, bio, CV -->
+                    <div class="col-md-8">
                         <p class="h1 font-weight-normal">{{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small></p>
                         <p class="text-profile-position">
                             {% for position in site.data.profile.positions %}
@@ -17,18 +18,19 @@
                             {{ site.data.profile.short_bio }}
                         </p>
                     </div>
+
+                    <!-- Right: Portrait, now vertically centered -->
                     {% if site.data.profile.show_portrait %}
-                    <div class="col-md-auto d-none d-md-block" style="text-align: right;">
-                        <figure class="figure">
+                    <div class="col-md-4 d-none d-md-flex align-items-center justify-content-end">
+                        <figure class="figure mb-0">
                             <img 
                                 src="{{ site.data.profile.portrait_url }}" 
-                                class="figure-img img-fluid" 
-                                style="height: 200px;"
+                                class="figure-img img-fluid rounded-circle" 
+                                style="max-height: 200px; max-width: 200px; object-fit: cover;"
                                 data-toggle="tooltip" 
                                 data-placement="top" 
                                 title="{{ site.data.profile.portrait_caption }}"
                             >
-                            <figcaption class="figure-caption text-right"></figcaption>
                         </figure>
                     </div>
                     {% endif %}
@@ -39,7 +41,7 @@
                 <div class="row">
                     <div class="col">
                         <!-- Research interest tags -->
-                        <div class="text-profile-bio mt-2">
+                        <div class="text-profile-bio mt-2 mb-3">
                             <span class="badge badge-pill" style="background-color:#17a2b8; color: white;">LLM Safety</span>
                             <span class="badge badge-pill" style="background-color:#ffc107; color: white;">Multilingual NLP</span>
                             <span class="badge badge-pill" style="background-color:#6c757d; color: white;">Benchmark</span>
@@ -125,4 +127,5 @@
     </div>
 </div>
 {% endif %}
+
 
