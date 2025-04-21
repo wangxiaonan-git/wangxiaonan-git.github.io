@@ -3,7 +3,8 @@
     <div class="card border-0 shadow-sm bg-white">
       <div class="card-body p-4">
         <div class="row">
-        
+
+          <!-- 教育经历 -->
           {% if site.data.profile.education %}
             <div class="col-md-6">
               <div class="mx-2 my-1">
@@ -24,6 +25,7 @@
             </div>
           {% endif %}
 
+          <!-- 奖项荣誉 -->
           {% if site.data.profile.awards %}
             <div class="col-md-6">
               <div class="mx-2 my-1">
@@ -37,6 +39,7 @@
             </div>
           {% endif %}
 
+          <!-- 实习/工作经历 + Travel -->
           {% if site.data.profile.experience %}
             <div class="col-md-6">
               <div class="mx-2 my-1">
@@ -54,7 +57,8 @@
                 </ul>
               </div>
 
-              <div class="my-2"></div> <!-- 间距 -->
+              <!-- Travel 与 Experience 之间留空 -->
+              <div class="my-2"></div>
 
               <div class="mx-2 my-1">
                 <h6>Travel</h6>
@@ -67,13 +71,14 @@
             </div>
           {% endif %}
 
+          <!-- 语言能力 -->
           {% if site.data.profile.spoken_languages %}
             <div class="col-md-6">
               <div class="mx-2 my-1">
                 <h6>Spoken Languages</h6>
                 <ul class="list-unstyled mb-1 small">
                   {% for lang in site.data.profile.spoken_languages %}
-                    <li class="mb-2">
+                    <li class="mb-3">
                       <div class="d-flex justify-content-between">
                         <strong>{{ lang.name }}</strong>
                         <span>{{ lang.level }}</span>
@@ -93,5 +98,6 @@
     </div>
   </div>
 </div>
+
 
 
