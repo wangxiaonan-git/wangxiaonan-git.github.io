@@ -59,3 +59,16 @@ img.lazy {
     font-family: Courier, monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.badge {
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+}
+
+
