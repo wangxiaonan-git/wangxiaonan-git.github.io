@@ -19,7 +19,7 @@ email: "nan @ yonsei.ac.kr"
 # orcid: 0000-0000-0000-0000
 
 short_bio: >-
-  I am a Ph.D. student in Computational Linguistics at Yonsei University, supervised by Professor Hansaem Kim. I currently work as a research intern at the Korean Data and Resource Center. My research focuses on the safety of large language models, with particular attention to privacy leakage in real-world applications. I am also interested in how language models perform across different languages and cultures, and how evaluation can help reveal and improve their adaptability, fairness, and robustness. By combining perspectives from linguistics and Language Models, I aim to develop benchmarks that support the safe and responsible use of language technologies in diverse settings.
+  I am a Ph.D. student in Computational Linguistics at Yonsei University, supervised by Dr. Hansaem Kim. I currently work as a research intern at the Korean Data and Resource Center. My research focuses on the safety of large language models, with particular attention to privacy leakage in real-world applications. I am also interested in how language models perform across different languages and cultures, and how evaluation can help reveal and improve their adaptability, fairness, and robustness. By combining perspectives from linguistics and Language Models, I aim to develop benchmarks that support the safe and responsible use of language technologies in diverse settings.
 
 show_portrait: True
 portrait_url: assets/images/photos/cropped_image.png
