@@ -66,7 +66,8 @@ awards:
   date: 2019
 
 service:
-- name: Reviewer of ACL SRW 2025 #<a href="https://2025.aclweb.org/">ACL SRW 2025</a>
+- name: Reviewer of Association for Computational Linguistics (ACL) SRW 2025 #<a href="https://2025.aclweb.org/">ACL SRW 2025</a>
+- name: Secretary of Korean Association for Corpus Linguistics (KACL) 2025 #<a href="https://kacl.or.kr/">KACL</a>
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
 # if you keep the link to the template so that more people can benefit from it. Thanks!
