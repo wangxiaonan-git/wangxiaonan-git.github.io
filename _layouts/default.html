@@ -123,11 +123,11 @@
     }
 
     /* ====================== RESEARCH AREAS ====================== */
-.research-wrapper {
-    max-width: 1400px;
-    margin: 40px auto 70px auto;
-    padding: 0 0;    /* ⭐ 把左右 padding 去掉 */
-}
+    .research-wrapper {
+      max-width: 1400px;
+      margin: 40px auto 70px auto;
+      padding: 0;
+    }
 
     .ra-title {
       font-size: 36px;
@@ -137,7 +137,6 @@
       color: #222;
     }
 
-    /* 第一行：3 张卡片等宽 */
     .ra-row-1 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -145,16 +144,14 @@
       margin-bottom: 34px;
     }
 
-    /* 第二行：2 张卡片居中 */
     .ra-row-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 34px;
-      justify-content: center;  /* ⭐ 整体居中 */
-      justify-items: center;    /* ⭐ 卡片居中 */
+      justify-content: center;
+      justify-items: center;
     }
 
-    /* 卡片样式保持不变 */
     .ra-card {
       background: linear-gradient(145deg, #ffffff, #f1f3f7);
       border-radius: 14px;
@@ -192,70 +189,63 @@
     }
 
     /* ====================== FUNDINGS ====================== */
-.partners-section {
-  max-width: 1400px;
-  margin: 40px auto;
-  padding: 50px 40px;
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
-  text-align: center;
-}
+    .partners-section {
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 50px 40px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
+      text-align: center;
+    }
 
-.partners-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #333;
-}
+    .partners-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #333;
+    }
 
-/* ⭐ 核心：一行 5 个，窗口变窄自动换行 */
-.partners-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px 30px;
-}
+    /* ⭐ 绝对保证一行 5 个 */
+    .partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px 24px;
+    }
 
-/* ⭐ 固定“槽位宽度”，保证一行 5 个 */
-.partner-logo-box {
-  width: 220px;
-  height: 110px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  padding: 12px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
+    .partner-logo-box {
+      width: 200px;
+      height: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
 
-/* ⭐ 所有 logo 统一规则，不再破坏布局 */
-.partner-logo-box img {
-  max-width: 85%;
-  max-height: 85%;
-  object-fit: contain;
-  transition: 0.25s ease;
-}
+    .partner-logo-box img {
+      max-width: 85%;
+      max-height: 85%;
+      object-fit: contain;
+    }
 
-/* hover 只动盒子，不动图片比例 */
-.partner-logo-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-}
+    .partner-logo-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    }
 
-/* ❌ 取消放大，避免挤掉列数 */
-.big-partner img {
-  transform: none;
-}
-
-
+    .big-partner img {
+      transform: none;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <div class="navbar-brand">
@@ -265,11 +255,7 @@
       Yonsei University
     </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/members.html">Members</a></li>
@@ -280,79 +266,23 @@
   </div>
 </nav>
 
-<!-- SUBPAGE BANNER -->
-{% if page.url != "/" and page.url != "/kdarc-lab/" %}
-<div class="subpage-banner"></div>
-{% endif %}
-
-<!-- HOME HERO -->
 {% if page.url == "/" or page.url == "/kdarc-lab/" %}
 <div class="hero-banner">
   <div class="hero-overlay"></div>
   <div class="hero-center">
     <h1>Korean Data Resource Center</h1>
-    <p>
-      Advancing intelligence data and evaluation science<br>
-      for reliable, multilingual, and culturally aware AI.
-    </p>
+    <p>Advancing intelligence data and evaluation science<br>for reliable, multilingual, and culturally aware AI.</p>
   </div>
 </div>
 {% endif %}
 
-<!-- MAIN CONTENT (non-home) -->
-{% if page.url != "/" and page.url != "/kdarc-lab/" %}
-<div class="content-wrapper">
-  {{ content }}
-</div>
-{% endif %}
-
-<!-- ====================== RESEARCH AREAS (HOME ONLY) ====================== -->
-{% if page.url == "/" or page.url == "/kdarc-lab/" %}
-<div class="research-wrapper">
-  <h2 class="ra-title">Research Areas</h2>
-
-  <!-- 第一行：3 个 -->
-  <div class="ra-row-1">
-    <div class="ra-card" style="--delay:0.1s">
-      <h3>Multimodal AI Safety & Privacy</h3>
-      <p>Frameworks for multimodal privacy detection, high-risk content analysis, geolocation privacy, PII datasets, and de-identification systems.</p>
-    </div>
-
-    <div class="ra-card" style="--delay:0.2s">
-      <h3>Benchmarking & Evaluation Science</h3>
-      <p>Rigorous evaluation of LLMs, focusing on cultural reasoning, figurative language, politeness, safety robustness, and fairness.</p>
-    </div>
-
-    <div class="ra-card" style="--delay:0.3s">
-      <h3>Korean NLP & Linguistic Resources</h3>
-      <p>Large-scale corpora, learner datasets, and linguistic archives supporting Korean NLP research and foundational AI.</p>
-    </div>
-  </div>
-
-  <!-- 第二行：2 个并居中 -->
-  <div class="ra-row-2">
-    <div class="ra-card" style="--delay:0.4s">
-      <h3>AI for Language Education</h3>
-      <p>Automated writing assessment, pronunciation evaluation, and corpus-driven educational AI research.</p>
-    </div>
-
-    <div class="ra-card" style="--delay:0.5s">
-      <h3>Cross-cultural & Applied NLP</h3>
-      <p>Language alignment, East Asian NLP, cultural bias studies, and applied models for real-world domains.</p>
-    </div>
-  </div>
-
-</div>
-{% endif %}
-
-<!-- ====================== FUNDINGS (HOME ONLY) ====================== -->
 {% if page.url == "/" or page.url == "/kdarc-lab/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
 
   <div class="partners-grid">
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
@@ -362,14 +292,14 @@
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/LI.jpg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/wv.jpg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/kice.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/ICONS.jpg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/IIAtecg.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/wv.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/kice.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/ICONS.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IIAtecg.jpg"></div>
   </div>
 </div>
 {% endif %}
