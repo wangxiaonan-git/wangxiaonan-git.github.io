@@ -192,23 +192,24 @@
     }
 
     /* ====================== FUNDINGS ====================== */
-    .partners-section {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 50px 40px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+.partners-section {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 50px 40px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
+  text-align: center;
+}
 
-    .partners-title {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #333;
-    }
+.partners-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #333;
+}
 
+/* ⭐ 核心：一行 5 个，窗口变窄自动换行 */
 .partners-grid {
   display: flex;
   flex-wrap: wrap;
@@ -216,25 +217,39 @@
   gap: 40px 30px;
 }
 
+/* ⭐ 固定“槽位宽度”，保证一行 5 个 */
 .partner-logo-box {
   width: 220px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
+/* ⭐ 所有 logo 统一规则，不再破坏布局 */
+.partner-logo-box img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: 0.25s ease;
+}
 
-    .partner-logo-box img {
-      max-width: 70%;
-      max-height: 70%;
-      object-fit: contain;
-      transition: 0.25s ease;
-    }
+/* hover 只动盒子，不动图片比例 */
+.partner-logo-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
 
-    .partner-logo-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-    }
+/* ❌ 取消放大，避免挤掉列数 */
+.big-partner img {
+  transform: none;
+}
 
-    .big-partner img { transform: scale(1.5); }
-  </style>
 
 </head>
 
