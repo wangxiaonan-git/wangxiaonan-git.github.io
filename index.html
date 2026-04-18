@@ -19,7 +19,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 2. 导航栏 (毛玻璃质感) */
+        /* 2. 导航栏 */
         nav {
             display: flex;
             justify-content: flex-end;
@@ -54,20 +54,20 @@
             max-width: 1100px;
             margin: 60px auto;
             padding: 0 30px;
-            gap: 60px;
+            gap: 70px; /* 稍微增加间距，让侧边 News 不拥挤 */
         }
 
-        /* 4. 左侧边栏 (Squircle 图片) */
+        /* 4. 左侧边栏 (包含 News) */
         .sidebar {
             flex: 1;
-            max-width: 260px;
-            text-align: center;
+            max-width: 280px; /* 稍微加宽一点以容纳文字 */
+            text-align: left; /* 改为左对齐，适合阅读新闻 */
         }
 
         .profile-pic-container {
             width: 100%;
             max-width: 240px;
-            margin: 0 auto 25px;
+            margin-bottom: 25px;
             border-radius: 40px; 
             overflow: hidden;
             aspect-ratio: 1 / 1;
@@ -84,28 +84,52 @@
 
         .sidebar h3 { font-size: 1.6rem; font-weight: 700; color: #000; margin: 0 0 5px 0; }
         .sidebar p { font-size: 0.95rem; color: #515154; margin: 0; line-height: 1.5; }
-        
+
+        /* 侧边栏 News 样式 */
+        .sidebar-news {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid #f2f2f2;
+        }
+        .sidebar-news h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        .sidebar-news ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar-news li { 
+            font-size: 0.85rem; 
+            line-height: 1.5; 
+            margin-bottom: 12px; 
+            color: #1d1d1f; 
+        }
+        .sidebar-news li strong { 
+            display: block; 
+            color: #86868b; 
+            font-size: 0.75rem; 
+            margin-bottom: 2px;
+        }
+
         /* 5. 右侧主内容区 */
         .main-content {
-            flex: 3;
+            flex: 2.5;
         }
         section {
-            margin-bottom: 50px;
+            margin-bottom: 55px;
         }
         h1 { font-size: 2.5rem; font-weight: 700; color: #000; margin-bottom: 15px; letter-spacing: -0.02em; }
         h2 { border-bottom: 1px solid #f2f2f2; padding-bottom: 8px; margin-top: 35px; font-weight: 600; color: #000; font-size: 1.8rem; }
         
-        ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 12px; font-size: 0.95rem; color: #1d1d1f; }
-        li strong { font-weight: 600; color: #000; margin-right: 8px; }
-
         /* 响应式设计 */
         @media (max-width: 850px) {
             .container { flex-direction: column; align-items: center; margin: 30px auto; padding: 0 20px;}
-            .sidebar { max-width: 100%; margin-bottom: 50px; }
+            .sidebar { max-width: 100%; text-align: center; }
+            .profile-pic-container { margin: 0 auto 25px; }
+            .sidebar-news { text-align: left; max-width: 400px; margin: 40px auto 0; }
             h1 { font-size: 2rem; text-align: center; }
-            nav { justify-content: center; padding: 15px 5%; }
-            nav a { margin: 0 10px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -123,12 +147,13 @@
             <p>PhD Student</p>
             <p>Yonsei University</p>
             <p style="font-size: 0.85rem; margin-top: 5px; color: #86868b;">nan@yonsei.ac.kr</p>
-            
-            <div class="social-icons">
-                <a href="mailto:nan@yonsei.ac.kr"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fas fa-graduation-cap"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+            <div class="sidebar-news">
+                <h4>News</h4>
+                <ul>
+                    <li><strong>Apr 2026</strong> Updated academic profile and research directions.</li>
+                    <li><strong>Mar 2026</strong> Initiated project on North Korean linguistic alignment.</li>
+                </ul>
             </div>
         </aside>
 
@@ -139,8 +164,8 @@
                 <p>I am a Ph.D. student in Computational Linguistics at Yonsei University, advised by Professor Hansaem Kim. As a researcher at the Data & Resource Convergence Lab, my research focuses on enhancing the cultural and security alignment of LLMs by investigating evaluative methodologies to ensure privacy protection and linguistic reliability across diverse cultural and dialectal contexts. </p>
             </section>
 
-            <section id="research-interests" style="margin-bottom: 40px;">
-                <h2 style="margin-top: 30px;">Research Interests</h2>
+            <section id="research-interests">
+                <h2>Research Interests</h2>
                 <p style="margin-bottom: 12px; line-height: 1.5;">
                     My research lies broadly in <i>Natural Language Processing</i> (NLP), with a particular focus on 
                     <span style="color: #d93025; font-weight: 600;">multilingual safety alignment</span>, 
@@ -160,33 +185,22 @@
                     <span style="color: #6f42c1;">data security</span>.
                 </p>
             </section>
+
             <section id="education">
                 <h2>Education</h2>
-                
                 <div style="margin-bottom: 12px;">
                     <div style="font-weight: 600; color: #000; font-size: 1.05rem; line-height: 1.2;">Yonsei University</div>
                     <div style="font-size: 0.95rem; color: #333;">Ph.D. Student in Computational Linguistics</div>
                 </div>
-
                 <div style="margin-bottom: 12px;">
                     <div style="font-weight: 600; color: #000; font-size: 1.05rem; line-height: 1.2;">Yonsei University</div>
                     <div style="font-size: 0.95rem; color: #333;">M.S. in Computational Linguistics (GPA: 4.01 / 4.3)</div>
                 </div>
-
                 <div style="margin-bottom: 12px;">
                     <div style="font-weight: 600; color: #000; font-size: 1.05rem; line-height: 1.2;">Hankuk University of Foreign Studies</div>
                     <div style="font-size: 0.95rem; color: #333;">M.A. in English Translation & Interpretation Studies (GPA: 4.15 / 4.5)</div>
                 </div>
             </section>
-
-            <section id="news">
-                <h2>News</h2>
-                <ul>
-                    <li><strong>[Apr 2026]</strong> Updated academic profile and research directions.</li>
-                    <li><strong>[Mar 2026]</strong> Initiated project on North Korean linguistic alignment.</li>
-                </ul>
-            </section>
-
 
         </main>
     </div>
