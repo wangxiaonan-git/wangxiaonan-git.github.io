@@ -4,23 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Homepage</title>
+    <title>Xiaonan Wang | Yonsei University</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 1. Global Styles */
+        /* 1. 全局样式：现代 AI 学术感 */
         body {
-            /* 统一使用更具现代感的Inter字体 */
             font-family: 'Inter', -apple-system, system-ui, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             background-color: #ffffff;
-            color: #1d1d1f; /* 使用稍浅的苹果黑，更柔和 */
+            color: #1d1d1f;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 2. Navigation Bar (AI 学术稳重版) */
+        /* 2. 导航栏：毛玻璃质感 */
         nav {
             display: flex;
             justify-content: flex-end;
@@ -41,7 +40,6 @@
             font-weight: 500;
             font-size: 0.95rem;
             letter-spacing: -0.01em;
-            text-transform: none; /* 使用自然大小写 */
             transition: all 0.2s ease;
         }
 
@@ -50,16 +48,16 @@
             font-weight: 600;
         }
 
-        /* 3. Main Container Layout */
+        /* 3. 页面容器布局 */
         .container {
             display: flex;
             max-width: 1100px;
-            margin: 60px auto; /* 增加顶部间距，更好看 */
+            margin: 60px auto;
             padding: 0 30px;
-            gap: 60px; /* 增加间距 */
+            gap: 60px;
         }
 
-        /* 4. Left Sidebar (精确还原 Squircle 圆角正方形) */
+        /* 4. 左侧边栏 (Squircle 图片与个人信息) */
         .sidebar {
             flex: 1;
             max-width: 260px;
@@ -68,25 +66,23 @@
 
         .profile-pic-container {
             width: 100%;
-            max-width: 240px; /* 稍微调大一点 */
-            margin: 0 auto 25px; /* 居中并增加底部间距 */
-            /* 精确复刻：Squircle 风格圆角 */
+            max-width: 240px;
+            margin: 0 auto 25px;
+            /* Squircle 圆角实现 */
             border-radius: 40px; 
-            overflow: hidden; /* 确保图片被裁剪 */
-            aspect-ratio: 1 / 1; /* 强制为正方形 */
-            background-color: #f5f5f7; /* 占位背景色 */
-            /* 增加非常细微的灰色边框，增加质感 */
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            background-color: #f5f5f7;
             border: 1px solid rgba(0,0,0,0.03); 
         }
 
         .profile-pic {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 确保图片填充不拉伸 */
+            object-fit: cover;
             display: block;
         }
 
-        /* 侧边栏文字精致化 */
         .sidebar h3 { font-size: 1.6rem; font-weight: 700; color: #000; margin: 0 0 5px 0; }
         .sidebar p { font-size: 0.95rem; color: #515154; margin: 0; line-height: 1.5; }
         
@@ -94,18 +90,18 @@
             margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 15px; /* 使用 gap 代替 margin */
+            gap: 15px;
         }
         
         .social-icons a {
             font-size: 1.4rem;
-            color: #86868b; /* 苹果风格的灰色 */
+            color: #86868b;
             text-decoration: none;
             transition: color 0.3s;
         }
         .social-icons a:hover { color: #000; }
 
-        /* 5. Right Content Area */
+        /* 5. 右侧主内容区 */
         .main-content {
             flex: 3;
         }
@@ -115,16 +111,14 @@
         h1 { font-size: 2.5rem; font-weight: 700; color: #000; margin-bottom: 15px; letter-spacing: -0.02em; }
         h2 { border-bottom: 1px solid #f2f2f2; padding-bottom: 8px; margin-top: 40px; font-weight: 600; color: #000; font-size: 1.8rem; }
         
-        /* News List 风格极简 */
         ul { list-style: none; padding: 0; margin: 0; }
         li { margin-bottom: 15px; font-size: 0.95rem; color: #1d1d1f; }
         li strong { font-weight: 600; color: #000; margin-right: 8px; }
 
-        /* Responsive Design */
+        /* 响应式设计：移动端自动适配 */
         @media (max-width: 850px) {
             .container { flex-direction: column; align-items: center; margin: 30px auto; padding: 0 20px;}
             .sidebar { max-width: 100%; margin-bottom: 50px; }
-            .profile-pic-container { max-width: 200px; border-radius: 30px; }
             h1 { font-size: 2rem; text-align: center; }
             nav { justify-content: center; padding: 15px 5%; }
             nav a { margin: 0 10px; font-size: 0.85rem; }
@@ -139,15 +133,22 @@
         
         <aside class="sidebar">
             <div class="profile-pic-container">
-                <img src="assets/css/images/photo.jpg" alt="Profile Picture" class="profile-pic">
+                <img src="assets/css/images/photo.jpg" alt="Xiaonan Wang" class="profile-pic">
             </div>
             <h3>Xiaonan Wang</h3>
             <p>PhD Student</p>
             <p>Yonsei University</p>
-            <p>nan@yonsei.ac.kr</p>
+            <p style="font-size: 0.85rem; margin-top: 5px; color: #86868b;">nan@yonsei.ac.kr</p>
             
+            <div class="social-icons">
+                <a href="mailto:nan@yonsei.ac.kr"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </aside>
 
-<main class="main-content">
+        <main class="main-content">
             
             <section id="about">
                 <h1>About Me</h1>
@@ -156,27 +157,19 @@
 
             <section id="education">
                 <h2>Education</h2>
-                <div style="margin-bottom: 25px;">
-                    <div style="display: flex; justify-content: space-between; font-weight: 600; color: #000;">
-                        <span>Yonsei University</span>
-                        <span style="color: #86868b; font-weight: 400; font-size: 0.9rem;">2024 – Present</span>
-                    </div>
+                
+                <div style="margin-bottom: 22px;">
+                    <div style="font-weight: 600; color: #000; font-size: 1.05rem;">Yonsei University</div>
                     <div style="font-size: 0.95rem; color: #333;">Ph.D. Student in Computational Linguistics</div>
                 </div>
 
-                <div style="margin-bottom: 25px;">
-                    <div style="display: flex; justify-content: space-between; font-weight: 600; color: #000;">
-                        <span>Yonsei University</span>
-                        <span style="color: #86868b; font-weight: 400; font-size: 0.9rem;">2022 – 2024</span>
-                    </div>
+                <div style="margin-bottom: 22px;">
+                    <div style="font-weight: 600; color: #000; font-size: 1.05rem;">Yonsei University</div>
                     <div style="font-size: 0.95rem; color: #333;">M.S. in Computational Linguistics (GPA: 4.01 / 4.3)</div>
                 </div>
 
-                <div style="margin-bottom: 25px;">
-                    <div style="display: flex; justify-content: space-between; font-weight: 600; color: #000;">
-                        <span>Hankuk University of Foreign Studies</span>
-                        <span style="color: #86868b; font-weight: 400; font-size: 0.9rem;">2020 – 2022</span>
-                    </div>
+                <div style="margin-bottom: 22px;">
+                    <div style="font-weight: 600; color: #000; font-size: 1.05rem;">Hankuk University of Foreign Studies</div>
                     <div style="font-size: 0.95rem; color: #333;">M.A. in English Translation & Interpretation (GPA: 4.15 / 4.5)</div>
                 </div>
             </section>
@@ -184,8 +177,8 @@
             <section id="news">
                 <h2>News</h2>
                 <ul>
-                    <li><strong>[Apr 2026]</strong> Updated academic background and publication showcase.</li>
-                    <li><strong>[Mar 2026]</strong> Initiated research project on North Korean linguistic benchmarks.</li>
+                    <li><strong>[Apr 2026]</strong> Updated academic profile and research directions.</li>
+                    <li><strong>[Mar 2026]</strong> Initiated project on North Korean linguistic alignment.</li>
                 </ul>
             </section>
 
@@ -199,3 +192,7 @@
             </section>
 
         </main>
+    </div>
+
+</body>
+</html>
