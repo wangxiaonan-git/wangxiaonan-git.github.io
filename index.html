@@ -3,142 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Homepage</title>
+    <title>Publications | Xiaonan Wang</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 1. Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #ffffff;
-            color: #333;
+        /* 现代简约风格基础设定 */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-main: #333;
+            --text-light: #666;
+            --bg-gray: #fcfcfc;
         }
 
-        /* 2. Navigation Bar */
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 10%;
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; 
+            line-height: 1.7; 
+            color: var(--text-main);
             background-color: #fff;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #555;
-            font-weight: bold;
+
+        /* 导航栏保持一致 */
+        nav { 
+            display: flex; 
+            justify-content: flex-end; 
+            padding: 25px 10%; 
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f0f0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        nav a { 
+            margin-left: 30px; 
+            text-decoration: none; 
+            color: var(--text-main); 
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
-        nav a:hover { color: #007bff; }
+        nav a:hover { color: var(--accent-color); }
 
-        /* 3. Main Container Layout */
-        .container {
-            display: flex;
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-            gap: 50px;
+        /* 页面容器 */
+        .container { 
+            max-width: 900px; 
+            margin: 60px auto; 
+            padding: 0 30px; 
         }
 
-        /* 4. Left Sidebar (Profile) */
-        .sidebar {
-            flex: 1;
-            max-width: 260px;
-            text-align: center;
+        h1 { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            margin-bottom: 50px; 
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
         }
-        .profile-pic {
-            width: 100%;
-            max-width: 230px;
-            border-radius: 5px; /* Rounded corners */
-            background-color: #eee; /* Placeholder color */
-            margin-bottom: 20px;
-        }
-        .social-icons {
-            margin-top: 15px;
-        }
-        .social-icons a {
+
+        /* 章节标题 */
+        .section-title {
             font-size: 1.4rem;
-            margin: 0 8px;
-            color: #666;
-            text-decoration: none;
+            font-weight: 600;
+            margin: 40px 0 25px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        .section-title i { margin-right: 12px; color: var(--accent-color); font-size: 1.2rem; }
+
+        /* 论文条目设计 */
+        .pub-list { list-style: none; padding: 0; }
+        .pub-item { 
+            margin-bottom: 30px; 
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .pub-item:hover {
+            background-color: var(--bg-gray);
+            border: 1px solid #eee;
+            transform: translateY(-2px);
         }
 
-        /* 5. Right Content Area */
-        .main-content {
-            flex: 3;
+        .pub-title { 
+            font-size: 1.15rem; 
+            font-weight: 600; 
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
         }
-        section {
-            margin-bottom: 50px;
+        .pub-authors { font-size: 0.95rem; color: var(--text-main); }
+        .me { font-weight: 700; text-decoration: underline; color: #000; }
+        .pub-venue { 
+            font-size: 0.9rem; 
+            color: var(--accent-color); 
+            font-style: italic; 
+            margin-top: 5px;
+            display: block;
         }
-        h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        h2 { border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px; }
-        
-        /* List Styles for News/Pubs */
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 12px; }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container { flex-direction: column; align-items: center; }
-            .sidebar { max-width: 100%; margin-bottom: 40px; }
+        /* 标签风格 */
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 20px;
+            background: #e1ecf4;
+            color: #39739d;
+            margin-right: 8px;
+            vertical-align: middle;
         }
+
+        @media (max-width: 768px) { .container { margin: 30px auto; } }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="publications/">Publications</a> 
-    <a href="projects/">Projects</a>
-    <a href="cv.html">CV</a>
-</nav>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html" style="color: var(--accent-color);">Publications</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../cv.html">CV</a>
+    </nav>
 
     <div class="container">
-        
-        <aside class="sidebar">
-            <img src="assets/img/profile.jpg" alt="Profile Picture" class="profile-pic">
-            <h3>Xiaonan Wang</h3>
-            <p>PhD Student</p>
-            <p>Yonsei University</p>
-            
-            <div class="social-icons">
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fas fa-graduation-cap"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </aside>
+        <h1>Selected Publications</h1>
 
-        <main class="main-content">
-            
-            <section id="about">
-                <h1>About Me</h1>
-                <p>I am a Ph.D. student in Computational Linguistics at Yonsei University, advised by Professor Hansaem Kim. As a researcher at the Data & Resource Convergence Lab, my research focuses on enhancing the cultural and security alignment of LLMs by investigating evaluative methodologies to ensure privacy protection and linguistic reliability across diverse cultural and dialectal contexts. </p>
-            </section>
+        <div class="section-title">
+            <i class="fas fa-users"></i> Conference Papers
+        </div>
+        <ul class="pub-list">
+            <li class="pub-item">
+                <span class="pub-title">Example Conference Paper Title About LLM Alignment</span>
+                <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Hansaem Kim.</span>
+                <span class="pub-venue"><span class="badge">ACL 2026</span> (To appear)</span>
+            </li>
+            <li class="pub-item">
+                <span class="pub-title">Another Representative Research on Linguistic Variations</span>
+                <span class="pub-authors">Co-author Name, <span class="me">Xiaonan Wang</span>.</span>
+                <span class="pub-venue"><span class="badge">EMNLP 2025</span> Proceedings of the 2025 Conference.</span>
+            </li>
+        </ul>
 
-            <section id="news">
-                <h2>News</h2>
-                <ul>
-                    <li><strong>[Month Year]</strong> Placeholder for your latest news or updates.</li>
-                    <li><strong>[Month Year]</strong> Placeholder for conference participation or paper acceptance.</li>
-                </ul>
-            </section>
-
-            <section id="research">
-                <h2>Research Interests</h2>
-                <ul>
-                    <li>Area 1: Description</li>
-                    <li>Area 2: Description</li>
-                    <li>Area 3: Description</li>
-                </ul>
-            </section>
-
-        </main>
+        <div class="section-title">
+            <i class="fas fa-file-alt"></i> Journal Articles
+        </div>
+        <ul class="pub-list">
+            <li class="pub-item">
+                <span class="pub-title">K-NameDiag: Diagnosing and Mitigating LLM Failures in Recognizing Culturally Specific Korean Names</span>
+                <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Hansaem Kim.</span>
+                <span class="pub-venue"><span class="badge">Applied Sciences</span> Under Review, 2025.</span>
+            </li>
+        </ul>
     </div>
 
 </body>
