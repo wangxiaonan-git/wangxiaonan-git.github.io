@@ -19,7 +19,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 2. 导航栏 */
+        /* 2. 导航栏 (毛玻璃) */
         nav {
             display: flex;
             justify-content: flex-end;
@@ -54,20 +54,20 @@
             max-width: 1100px;
             margin: 60px auto;
             padding: 0 30px;
-            gap: 70px; /* 稍微增加间距，让侧边 News 不拥挤 */
+            gap: 70px;
         }
 
-        /* 4. 左侧边栏 (包含 News) */
+        /* 4. 左侧边栏 (全部内容居中对齐) */
         .sidebar {
             flex: 1;
-            max-width: 280px; /* 稍微加宽一点以容纳文字 */
-            text-align: left; /* 改为左对齐，适合阅读新闻 */
+            max-width: 280px;
+            text-align: center; /* 核心修改：确保所有文字居中 */
         }
 
         .profile-pic-container {
             width: 100%;
             max-width: 240px;
-            margin-bottom: 25px;
+            margin: 0 auto 25px; /* 容器本身居中并留底边距 */
             border-radius: 40px; 
             overflow: hidden;
             aspect-ratio: 1 / 1;
@@ -88,22 +88,24 @@
         /* 侧边栏 News 样式 */
         .sidebar-news {
             margin-top: 45px;
-            padding-top: 20px;
+            padding-top: 25px;
             border-top: 1px solid #f2f2f2;
+            text-align: left; /* 新闻列表建议左对齐，方便多行阅读 */
         }
         .sidebar-news h4 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 15px;
             color: #000;
+            text-align: center; /* 新闻标题保持居中 */
         }
         .sidebar-news ul { list-style: none; padding: 0; margin: 0; }
         .sidebar-news li { 
             font-size: 0.85rem; 
             line-height: 1.5; 
-            margin-bottom: 12px; 
+            margin-bottom: 15px; 
             color: #1d1d1f; 
         }
         .sidebar-news li strong { 
@@ -126,9 +128,8 @@
         /* 响应式设计 */
         @media (max-width: 850px) {
             .container { flex-direction: column; align-items: center; margin: 30px auto; padding: 0 20px;}
-            .sidebar { max-width: 100%; text-align: center; }
-            .profile-pic-container { margin: 0 auto 25px; }
-            .sidebar-news { text-align: left; max-width: 400px; margin: 40px auto 0; }
+            .sidebar { max-width: 100%; }
+            .sidebar-news { max-width: 400px; margin: 40px auto 0; }
             h1 { font-size: 2rem; text-align: center; }
         }
     </style>
@@ -146,7 +147,7 @@
             <h3>Xiaonan Wang</h3>
             <p>PhD Student</p>
             <p>Yonsei University</p>
-            <p style="font-size: 0.85rem; margin-top: 5px; color: #86868b;">nan@yonsei.ac.kr</p>
+            <p style="font-size: 0.85rem; margin-top: 8px; color: #86868b;">nan@yonsei.ac.kr</p>
 
             <div class="sidebar-news">
                 <h4>News</h4>
@@ -188,15 +189,15 @@
 
             <section id="education">
                 <h2>Education</h2>
-                <div style="margin-bottom: 12px;">
+                <div style="margin-bottom: 15px;">
                     <div style="font-weight: 600; color: #000; font-size: 1.05rem; line-height: 1.2;">Yonsei University</div>
                     <div style="font-size: 0.95rem; color: #333;">Ph.D. Student in Computational Linguistics</div>
                 </div>
-                <div style="margin-bottom: 12px;">
+                <div style="margin-bottom: 15px;">
                     <div style="font-weight: 600; color: #000; font-size: 1.05rem; line-height: 1.2;">Yonsei University</div>
                     <div style="font-size: 0.95rem; color: #333;">M.S. in Computational Linguistics (GPA: 4.01 / 4.3)</div>
                 </div>
-                <div style="margin-bottom: 12px;">
+                <div style="margin-bottom: 15px;">
                     <div style="font-weight: 600; color: #000; font-size: 1.05rem; line-height: 1.2;">Hankuk University of Foreign Studies</div>
                     <div style="font-size: 0.95rem; color: #333;">M.A. in English Translation & Interpretation Studies (GPA: 4.15 / 4.5)</div>
                 </div>
