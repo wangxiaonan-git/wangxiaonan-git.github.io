@@ -9,8 +9,8 @@
     <style>
         :root {
             --tag-dark: #333;
-            --color-ongoing: #3d5a80; /* 深蓝色代表进行中 */
-            --color-completed: #e67e22; /* 橙色代表已完成 */
+            --color-ongoing: #3d5a80;   /* 进行中：深蓝色 */
+            --color-accent: #e67e22;    /* 已完成：统一的橙色 */
             --text-main: #1d1d1f;
             --text-muted: #636e72;
         }
@@ -21,6 +21,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* 导航栏：路径已处理为返回上级目录 */
         nav { 
             display: flex; justify-content: flex-end; padding: 15px 10%; 
             border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100;
@@ -30,6 +31,7 @@
 
         .container { max-width: 850px; margin: 40px auto; padding: 0 30px; }
 
+        /* Nature 风格大标题 */
         h1 { 
             font-family: 'Lora', serif;
             font-size: 2.2rem; 
@@ -39,6 +41,7 @@
             letter-spacing: -0.02em;
         }
 
+        /* 章节分割线 */
         .section-title { 
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem; 
@@ -51,22 +54,28 @@
             letter-spacing: 0.08em;
         }
 
+        /* 项目条目布局 */
         .project-row { margin-bottom: 30px; padding: 4px 0; }
 
-        /* 沿用论文页的直角拼接标签 */
+        /* 直角拼接标签：与 Publications 页面一致 */
         .split-tag {
             display: inline-flex; overflow: hidden; font-size: 0.6rem; font-weight: 800; 
             margin-bottom: 8px; border-radius: 0px; height: 18px; align-items: center;
         }
         .tag-l { background: var(--tag-dark); color: #fff; padding: 0 8px; height: 100%; display: flex; align-items: center; }
         .tag-r { color: #fff; padding: 0 10px; height: 100%; display: flex; align-items: center; }
+        
         .bg-ongoing { background: var(--color-ongoing); }
-        .bg-completed { background: var(--color-completed); }
+        .bg-accent { background: var(--color-accent); }
 
+        /* 项目内容排版 */
         .project-name { font-size: 1.1rem; font-weight: 700; color: #000; margin-bottom: 5px; display: block; }
         .project-role { font-size: 0.88rem; color: #444; font-weight: 600; margin-bottom: 4px; display: block; }
         .project-desc { font-size: 0.9rem; color: #555; margin-bottom: 8px; line-height: 1.5; }
         .project-meta { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; display: block; }
+
+        /* 简单的交互反馈 */
+        .project-row:hover .project-name { color: var(--color-ongoing); }
     </style>
 </head>
 <body>
@@ -74,7 +83,7 @@
     <nav>
         <a href="../index.html">Home</a>
         <a href="../publications/index.html">Publications</a>
-        <a href="index.html">Projects</a>
+        <a href="index.html" style="color: var(--color-ongoing);">Projects</a>
         <a href="../cv.html">CV</a>
     </nav>
 
@@ -88,11 +97,11 @@
             <span class="project-name">NorthKoreanEval: Cultural & Linguistic Benchmark for North Korean Understanding</span>
             <span class="project-role">Lead Researcher</span>
             <p class="project-desc">Developing a comprehensive benchmark to assess LLMs' understanding of North Korean culture, vocabulary, and orthography, addressing the South Korean-centric bias in current NLP models.</p>
-            <span class="project-meta">2026 – Present | Supported by Yonsei University</span>
+            <span class="project-meta">2026 – Present | Yonsei University</span>
         </div>
 
         <div class="project-row">
-            <div class="split-tag"><span class="tag-l">Project</span><span class="tag-r bg-completed">Completed</span></div>
+            <div class="split-tag"><span class="tag-l">Project</span><span class="tag-r bg-accent">Completed</span></div>
             <span class="project-name">K-NameDiag: Error-Driven Prompting for PII Recognition</span>
             <span class="project-role">Primary Contributor</span>
             <p class="project-desc">Constructed a "Diagnose-and-Mitigate" framework to improve LLM performance in recognizing culturally specific Korean names for privacy-preserving data generation.</p>
@@ -105,8 +114,16 @@
             <div class="split-tag"><span class="tag-l">R&D</span><span class="tag-r bg-ongoing">2024–2026</span></div>
             <span class="project-name">Development of Statistics-Maintaining Personal Data Generation Technology</span>
             <span class="project-role">Graduate Researcher (RA)</span>
-            <p class="project-desc">Working on LLM safety alignment and de-identification performance judgment in collaboration with KISA and WorldVertex.</p>
+            <p class="project-desc">Focusing on LLM safety alignment and de-identification performance judgment in collaboration with KISA and WorldVertex.</p>
             <span class="project-meta">Grant No. 2024-0-XXXXX | Funded by KISA / MSIT</span>
+        </div>
+
+        <div class="project-row">
+            <div class="split-tag"><span class="tag-l">R&D</span><span class="tag-r bg-accent">Completed</span></div>
+            <span class="project-name">Multimodal Event Representation via 6D Cognitive Coordinates</span>
+            <span class="project-role">Researcher</span>
+            <p class="project-desc">Integrated saliency as a cognitive dimension for managing long-term memory in multimodal models based on Ebbinghaus forgetting curve theories.</p>
+            <span class="project-meta">2026 | Academic Research Project</span>
         </div>
 
     </div>
