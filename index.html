@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 1. Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+        }
 
+        /* 2. Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 10%;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #007bff; }
+
+        /* 3. Main Container Layout */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 50px;
+        }
+
+        /* 4. Left Sidebar (Profile) */
+        .sidebar {
+            flex: 1;
+            max-width: 260px;
+            text-align: center;
+        }
+        .profile-pic {
+            width: 100%;
+            max-width: 230px;
+            border-radius: 5px; /* Rounded corners */
+            background-color: #eee; /* Placeholder color */
+            margin-bottom: 20px;
+        }
+        .social-icons {
+            margin-top: 15px;
+        }
+        .social-icons a {
+            font-size: 1.4rem;
+            margin: 0 8px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        /* 5. Right Content Area */
+        .main-content {
+            flex: 3;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px; }
+        
+        /* List Styles for News/Pubs */
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 12px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; align-items: center; }
+            .sidebar { max-width: 100%; margin-bottom: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+    </nav>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <img src="assets/img/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h3>Full Name</h3>
+            <p>Title / Position</p>
+            <p>Department<br>University</p>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <section id="about">
+                <h1>Biography</h1>
+                <p>[Placeholder for your short biography. Briefly describe your research background and current focus.]</p>
+            </section>
+
+            <section id="news">
+                <h2>News</h2>
+                <ul>
+                    <li><strong>[Month Year]</strong> Placeholder for your latest news or updates.</li>
+                    <li><strong>[Month Year]</strong> Placeholder for conference participation or paper acceptance.</li>
+                </ul>
+            </section>
+
+            <section id="research">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li>Area 1: Description</li>
+                    <li>Area 2: Description</li>
+                    <li>Area 3: Description</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
