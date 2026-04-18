@@ -57,17 +57,21 @@
             gap: 70px;
         }
 
-        /* 4. 左侧边栏 (全部内容居中对齐) */
+        /* 4. 左侧边栏 (个人信息居中，新闻左对齐) */
         .sidebar {
             flex: 1;
             max-width: 280px;
-            text-align: center; /* 核心修改：确保所有文字居中 */
+        }
+
+        .profile-info {
+            text-align: center; /* 个人信息部分保持居中 */
+            margin-bottom: 40px;
         }
 
         .profile-pic-container {
             width: 100%;
             max-width: 240px;
-            margin: 0 auto 25px; /* 容器本身居中并留底边距 */
+            margin: 0 auto 25px;
             border-radius: 40px; 
             overflow: hidden;
             aspect-ratio: 1 / 1;
@@ -85,12 +89,12 @@
         .sidebar h3 { font-size: 1.6rem; font-weight: 700; color: #000; margin: 0 0 5px 0; }
         .sidebar p { font-size: 0.95rem; color: #515154; margin: 0; line-height: 1.5; }
 
-        /* 侧边栏 News 样式 */
+        /* 侧边栏 News 专门改为左对齐 */
         .sidebar-news {
-            margin-top: 45px;
             padding-top: 25px;
             border-top: 1px solid #f2f2f2;
-            text-align: left; /* 新闻列表建议左对齐，方便多行阅读 */
+            text-align: left; /* 核心修改：News 整体左对齐 */
+            padding-left: 10px; /* 增加微调间距，不让文字紧贴边缘 */
         }
         .sidebar-news h4 {
             font-size: 0.9rem;
@@ -99,7 +103,6 @@
             letter-spacing: 0.05em;
             margin-bottom: 15px;
             color: #000;
-            text-align: center; /* 新闻标题保持居中 */
         }
         .sidebar-news ul { list-style: none; padding: 0; margin: 0; }
         .sidebar-news li { 
@@ -129,7 +132,7 @@
         @media (max-width: 850px) {
             .container { flex-direction: column; align-items: center; margin: 30px auto; padding: 0 20px;}
             .sidebar { max-width: 100%; }
-            .sidebar-news { max-width: 400px; margin: 40px auto 0; }
+            .sidebar-news { max-width: 400px; margin: 40px auto 0; padding-left: 0; }
             h1 { font-size: 2rem; text-align: center; }
         }
     </style>
@@ -141,13 +144,15 @@
     <div class="container">
         
         <aside class="sidebar">
-            <div class="profile-pic-container">
-                <img src="assets/css/images/photo.jpg" alt="Xiaonan Wang" class="profile-pic">
+            <div class="profile-info">
+                <div class="profile-pic-container">
+                    <img src="assets/css/images/photo.jpg" alt="Xiaonan Wang" class="profile-pic">
+                </div>
+                <h3>Xiaonan Wang</h3>
+                <p>PhD Student</p>
+                <p>Yonsei University</p>
+                <p style="font-size: 0.85rem; margin-top: 8px; color: #86868b;">nan@yonsei.ac.kr</p>
             </div>
-            <h3>Xiaonan Wang</h3>
-            <p>PhD Student</p>
-            <p>Yonsei University</p>
-            <p style="font-size: 0.85rem; margin-top: 8px; color: #86868b;">nan@yonsei.ac.kr</p>
 
             <div class="sidebar-news">
                 <h4>News</h4>
