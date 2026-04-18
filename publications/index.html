@@ -8,84 +8,78 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --accent-color: #1a73e8; /* 谷歌蓝，更具科技感 */
-            --bg-hover: #f8f9fa;
-            --tag-nlp: #ffca28;
-            --tag-social: #ef5350;
-            --tag-edu: #78909c;
-            --arxiv-blue: #224488;
+            --accent-color: #1a73e8;
+            --tag-dark: #474747;
+            --color-acl: #2980b9;
+            --color-if: #e67e22;
+            --bg-hover: #f9f9f9;
         }
 
-        body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            margin: 0; line-height: 1.5; color: #333; 
-        }
-
-        nav { 
-            display: flex; justify-content: flex-end; padding: 20px 10%; 
-            border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100;
-        }
+        body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; line-height: 1.5; color: #333; }
+        nav { display: flex; justify-content: flex-end; padding: 20px 10%; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100; }
         nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; }
 
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-        
-        h1 { font-size: 2.2rem; margin-bottom: 40px; color: var(--primary-color); }
-        .section-title { font-size: 1.5rem; margin: 40px 0 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 30px; }
+        h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 40px; color: var(--primary-color); }
+        .section-title { font-size: 1.5rem; margin: 40px 0 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; font-weight: 700; }
 
-        /* 论文条目布局 */
+        /* 论文条目卡片 */
         .pub-row {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 40px;
-            padding: 15px;
-            border-radius: 12px;
-            transition: background 0.2s;
+            display: flex; gap: 30px; margin-bottom: 40px; padding: 20px;
+            border-radius: 12px; transition: background 0.3s ease;
         }
         .pub-row:hover { background: var(--bg-hover); }
 
-        /* 左侧圆角图片方格 */
+        /* 左侧图片 */
         .pub-image {
-            flex: 0 0 220px; /* 固定宽度 */
-            height: 130px;
-            background: #eee;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #e0e0e0;
+            flex: 0 0 240px; height: 140px; background: #f0f0f0; 
+            border-radius: 10px; overflow: hidden; border: 1px solid #e0e0e0;
         }
         .pub-image img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 右侧文字内容 */
+        /* 右侧信息 */
         .pub-info { flex: 1; }
-        .pub-title { font-size: 1.1rem; font-weight: 700; color: #111; margin-bottom: 5px; display: inline-block; }
+
+        /* 1. 双色拼接标签 (置顶) */
+        .split-tag {
+            display: inline-flex; border-radius: 4px; overflow: hidden; 
+            font-size: 0.75rem; font-weight: 800; margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .tag-l { background: var(--tag-dark); color: #fff; padding: 2px 8px; text-transform: uppercase; }
+        .tag-r { color: #fff; padding: 2px 10px; }
+        .bg-acl { background: var(--color-acl); }
+        .bg-if { background: var(--color-if); }
+
+        /* 标题样式 */
+        .pub-title { font-size: 1.15rem; font-weight: 700; color: #111; display: block; margin-bottom: 8px; line-height: 1.3; }
         
-        /* 论文标题后的彩色小标签 */
-        .type-tag {
-            font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; color: #fff; 
-            font-weight: 700; margin-left: 5px; vertical-align: middle; text-transform: uppercase;
-        }
-        .nlp { background: var(--tag-nlp); color: #855c00; }
-        .social { background: var(--tag-social); }
-        .edu { background: var(--tag-edu); }
+        /* 作者与会议 */
+        .pub-authors { font-size: 0.95rem; color: #444; margin-bottom: 4px; display: block; }
+        .me { font-weight: 700; text-decoration: underline; color: #000; }
+        .pub-venue { font-size: 0.9rem; color: #777; font-style: italic; margin-bottom: 12px; display: block; }
 
-        .pub-authors { font-size: 0.95rem; color: #555; display: block; margin-bottom: 4px; }
-        .me { font-weight: 700; color: #000; text-decoration: underline; }
-        .pub-venue { font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 10px; display: block; }
+        /* 2. 底部功能方格设计 */
+        .bottom-container { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; align-items: center; }
 
-        /* 底部链接小块 (arXiv, Code, Best Paper) */
-        .links-container { display: flex; gap: 8px; flex-wrap: wrap; }
-        .link-box {
-            font-size: 0.75rem; padding: 3px 10px; border-radius: 4px;
-            text-decoration: none; font-weight: 600; color: #fff; display: inline-flex; align-items: center;
+        /* 链接方格 (深色实心感) */
+        .btn-link {
+            font-size: 0.75rem; padding: 4px 12px; border-radius: 6px;
+            text-decoration: none; font-weight: 700; color: #fff;
+            background: #2c3e50; border: 1px solid #2c3e50;
+            transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;
         }
-        .link-arxiv { background: var(--arxiv-blue); }
-        .link-code { background: #333; }
-        .link-hf { background: #ff9d00; } /* HuggingFace color */
-        .link-award { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .btn-link:hover { background: var(--accent-color); border-color: var(--accent-color); }
 
-        /* 指向 SCI/IF/ACL 的特色标签 */
-        .venue-tag {
-            background: #f1f3f4; color: #5f6368; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; border: 1px solid #dadce0;
+        /* 关键词方格 (浅色描边感 - 区分设计) */
+        .kw-tag {
+            font-size: 0.7rem; padding: 3px 10px; border-radius: 6px;
+            font-weight: 600; color: #5f6368; background: #fff;
+            border: 1.5px solid #dadce0; text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+        .kw-nlp { border-color: #ffca28; color: #b08a00; background: #fffdf5; }
+        .kw-social { border-color: #ef5350; color: #c62828; background: #fff8f8; }
 
         @media (max-width: 768px) {
             .pub-row { flex-direction: column; }
@@ -103,7 +97,7 @@
     </nav>
 
     <div class="container">
-        <h1>Publications</h1>
+        <h1>Selected Publications</h1>
 
         <div class="section-title">Conference Papers</div>
 
@@ -112,15 +106,22 @@
                 <img src="../assets/img/paper1_teaser.png" alt="Paper Diagram">
             </div>
             <div class="pub-info">
+                <div class="split-tag">
+                    <span class="tag-l">ACL</span>
+                    <span class="tag-r bg-acl">2026</span>
+                </div>
+
                 <span class="pub-title">RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity</span>
-                <span class="type-tag nlp">NLP</span><span class="type-tag social">Social</span>
+                
                 <span class="pub-authors">Jisu Shin, Hoyun Song, <span class="me">Xiaonan Wang</span>, Alice Oh.</span>
                 <span class="pub-venue">Findings of the Association for Computational Linguistics: ACL 2026 (Long)</span>
                 
-                <div class="links-container">
-                    <a href="#" class="link-box link-arxiv">arXiv</a>
-                    <a href="#" class="link-box link-code">Code</a>
-                    <span class="venue-tag">ACL 2026</span>
+                <div class="bottom-container">
+                    <a href="#" class="btn-link"><i class="fas fa-file-pdf"></i> arXiv</a>
+                    <a href="#" class="btn-link"><i class="fab fa-github"></i> Code</a>
+                    
+                    <span class="kw-tag kw-nlp">NLP</span>
+                    <span class="kw-tag kw-social">Social</span>
                 </div>
             </div>
         </div>
@@ -132,16 +133,19 @@
                 <img src="../assets/img/paper2_teaser.png" alt="Paper Diagram">
             </div>
             <div class="pub-info">
+                <div class="split-tag">
+                    <span class="tag-l">SCI</span>
+                    <span class="tag-r bg-if">IF: 15.5</span>
+                </div>
+
                 <span class="pub-title">K-NameDiag: Diagnosing and Mitigating LLM Failures in Recognizing Culturally Specific Korean Names</span>
-                <span class="type-tag nlp">NLP</span>
+                
                 <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Hansaem Kim.</span>
                 <span class="pub-venue">Applied Sciences, 2025.</span>
                 
-                <div class="links-container">
-                    <a href="#" class="link-box link-arxiv">arXiv</a>
-                    <span class="link-box link-award"><i class="fas fa-medal"></i> Best Paper Award</span>
-                    <span class="venue-tag">SCI (IF: 2.7)</span>
-                    <span class="venue-tag">Q2</span>
+                <div class="bottom-container">
+                    <a href="#" class="btn-link"><i class="fas fa-file-alt"></i> Journal Page</a>
+                    <span class="kw-tag kw-nlp">NLP</span>
                 </div>
             </div>
         </div>
