@@ -6,84 +6,90 @@
     <title>Publications | Xiaonan Wang</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 1. Global & Colors */
         :root {
             --primary-color: #2c3e50;
-            --accent-color: #1a73e8;
-            --text-main: #333;
-            --text-muted: #666;
-            --bg-hover: #fcfcfc;
-            --tag-dark: #444; /* 拼接标签左侧深色 */
-            --color-if: #e67e22; /* IF 橙红色 */
-            --color-acl: #2980b9; /* ACL 蓝色 */
+            --accent-color: #1a73e8; /* 谷歌蓝，更具科技感 */
+            --bg-hover: #f8f9fa;
+            --tag-nlp: #ffca28;
+            --tag-social: #ef5350;
+            --tag-edu: #78909c;
+            --arxiv-blue: #224488;
         }
 
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
-            margin: 0; line-height: 1.5; color: var(--text-main); 
-            background-color: #fff;
+            margin: 0; line-height: 1.5; color: #333; 
         }
 
-        /* 2. Navigation */
         nav { 
             display: flex; justify-content: flex-end; padding: 20px 10%; 
             border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100;
         }
-        nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; font-size: 0.95rem; }
-        nav a:hover { color: var(--accent-color); }
+        nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; }
 
-        /* 3. Layout Container */
-        .container { max-width: 1000px; margin: 60px auto; padding: 0 30px; }
-        h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 50px; color: var(--primary-color); }
-        .section-title { font-size: 1.6rem; margin: 50px 0 25px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-weight: 700; }
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        
+        h1 { font-size: 2.2rem; margin-bottom: 40px; color: var(--primary-color); }
+        .section-title { font-size: 1.5rem; margin: 40px 0 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
 
-        /* 4. Publication Row Layout */
+        /* 论文条目布局 */
         .pub-row {
-            display: flex; gap: 30px; margin-bottom: 45px; padding: 20px;
-            border-radius: 12px; transition: all 0.3s ease; border: 1px solid transparent;
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+            padding: 15px;
+            border-radius: 12px;
+            transition: background 0.2s;
         }
-        .pub-row:hover { background: var(--bg-hover); border: 1px solid #efefef; transform: translateY(-2px); }
+        .pub-row:hover { background: var(--bg-hover); }
 
-        /* 5. Left: Teaser Image */
+        /* 左侧圆角图片方格 */
         .pub-image {
-            flex: 0 0 240px; height: 140px; background: #f0f0f0; 
-            border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;
+            flex: 0 0 220px; /* 固定宽度 */
+            height: 130px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
         }
         .pub-image img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 6. Right: Content Info */
+        /* 右侧文字内容 */
         .pub-info { flex: 1; }
-        .pub-title { font-size: 1.15rem; font-weight: 700; color: #111; margin-bottom: 8px; display: block; line-height: 1.3; }
-        .pub-authors { font-size: 0.95rem; color: var(--text-main); margin-bottom: 5px; display: block; }
+        .pub-title { font-size: 1.1rem; font-weight: 700; color: #111; margin-bottom: 5px; display: inline-block; }
+        
+        /* 论文标题后的彩色小标签 */
+        .type-tag {
+            font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; color: #fff; 
+            font-weight: 700; margin-left: 5px; vertical-align: middle; text-transform: uppercase;
+        }
+        .nlp { background: var(--tag-nlp); color: #855c00; }
+        .social { background: var(--tag-social); }
+        .edu { background: var(--tag-edu); }
+
+        .pub-authors { font-size: 0.95rem; color: #555; display: block; margin-bottom: 4px; }
         .me { font-weight: 700; color: #000; text-decoration: underline; }
-        .pub-venue { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-bottom: 12px; display: block; }
+        .pub-venue { font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 10px; display: block; }
 
-        /* 7. Modern Split Tags (拼接标签) */
-        .split-tag {
-            display: inline-flex; align-items: center; font-size: 0.7rem; 
-            font-weight: 700; margin-right: 12px; border-radius: 4px; overflow: hidden;
-            vertical-align: middle; height: 20px;
+        /* 底部链接小块 (arXiv, Code, Best Paper) */
+        .links-container { display: flex; gap: 8px; flex-wrap: wrap; }
+        .link-box {
+            font-size: 0.75rem; padding: 3px 10px; border-radius: 4px;
+            text-decoration: none; font-weight: 600; color: #fff; display: inline-flex; align-items: center;
         }
-        .tag-l { background: var(--tag-dark); color: #fff; padding: 2px 6px; text-transform: uppercase; }
-        .tag-r { color: #fff; padding: 2px 8px; }
-        .bg-if { background: var(--color-if); }
-        .bg-acl { background: var(--color-acl); }
+        .link-arxiv { background: var(--arxiv-blue); }
+        .link-code { background: #333; }
+        .link-hf { background: #ff9d00; } /* HuggingFace color */
+        .link-award { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
 
-        /* 8. Bottom Link Buttons */
-        .links-container { display: flex; gap: 10px; flex-wrap: wrap; }
-        .btn-link {
-            font-size: 0.75rem; padding: 4px 12px; border-radius: 4px;
-            text-decoration: none; font-weight: 600; color: #fff; transition: opacity 0.2s;
+        /* 指向 SCI/IF/ACL 的特色标签 */
+        .venue-tag {
+            background: #f1f3f4; color: #5f6368; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; border: 1px solid #dadce0;
         }
-        .btn-arxiv { background: #224488; }
-        .btn-code { background: #333; }
-        .btn-award { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
-        .btn-link:hover { opacity: 0.8; }
 
-        /* Mobile Optimization */
         @media (max-width: 768px) {
-            .pub-row { flex-direction: column; gap: 15px; }
-            .pub-image { flex: 0 0 auto; width: 100%; height: 160px; }
+            .pub-row { flex-direction: column; }
+            .pub-image { flex: 0 0 auto; width: 100%; height: 180px; }
         }
     </style>
 </head>
@@ -91,34 +97,30 @@
 
     <nav>
         <a href="../index.html">Home</a>
-        <a href="index.html" style="color: var(--accent-color);">Publications</a>
+        <a href="index.html">Publications</a>
         <a href="../projects/index.html">Projects</a>
         <a href="../cv.html">CV</a>
     </nav>
 
     <div class="container">
-        <h1>Publications</h1>
+        <h1>Selected Publications</h1>
 
         <div class="section-title">Conference Papers</div>
 
         <div class="pub-row">
             <div class="pub-image">
-                <img src="../assets/img/paper1_teaser.png" alt="Methodology Diagram">
+                <img src="../assets/img/paper1_teaser.png" alt="Paper Diagram">
             </div>
             <div class="pub-info">
-                <div style="margin-bottom: 10px;">
-                    <div class="split-tag">
-                        <span class="tag-l">ACL Main</span>
-                        <span class="tag-r bg-acl">2026</span>
-                    </div>
-                </div>
                 <span class="pub-title">RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity</span>
+                <span class="type-tag nlp">NLP</span><span class="type-tag social">Social</span>
                 <span class="pub-authors">Jisu Shin, Hoyun Song, <span class="me">Xiaonan Wang</span>, Alice Oh.</span>
                 <span class="pub-venue">Findings of the Association for Computational Linguistics: ACL 2026 (Long)</span>
                 
                 <div class="links-container">
-                    <a href="#" class="btn-link btn-arxiv">arXiv</a>
-                    <a href="#" class="btn-link btn-code">Code</a>
+                    <a href="#" class="link-box link-arxiv">arXiv</a>
+                    <a href="#" class="link-box link-code">Code</a>
+                    <span class="venue-tag">ACL 2026</span>
                 </div>
             </div>
         </div>
@@ -127,22 +129,19 @@
 
         <div class="pub-row">
             <div class="pub-image">
-                <img src="../assets/img/paper2_teaser.png" alt="Framework Diagram">
+                <img src="../assets/img/paper2_teaser.png" alt="Paper Diagram">
             </div>
             <div class="pub-info">
-                <div style="margin-bottom: 10px;">
-                    <div class="split-tag">
-                        <span class="tag-l">SCI</span>
-                        <span class="tag-r bg-if">IF:15.5</span>
-                    </div>
-                </div>
                 <span class="pub-title">K-NameDiag: Diagnosing and Mitigating LLM Failures in Recognizing Culturally Specific Korean Names</span>
+                <span class="type-tag nlp">NLP</span>
                 <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Hansaem Kim.</span>
                 <span class="pub-venue">Applied Sciences, 2025.</span>
                 
                 <div class="links-container">
-                    <a href="#" class="btn-link btn-arxiv">arXiv</a>
-                    <span class="btn-link btn-award"><i class="fas fa-medal"></i> Best Paper Award</span>
+                    <a href="#" class="link-box link-arxiv">arXiv</a>
+                    <span class="link-box link-award"><i class="fas fa-medal"></i> Best Paper Award</span>
+                    <span class="venue-tag">SCI (IF: 2.7)</span>
+                    <span class="venue-tag">Q2</span>
                 </div>
             </div>
         </div>
