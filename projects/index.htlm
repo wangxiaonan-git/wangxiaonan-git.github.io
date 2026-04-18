@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Xiaonan Wang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tag-dark: #333;
+            --color-ongoing: #3d5a80; /* 深蓝色代表进行中 */
+            --color-completed: #e67e22; /* 橙色代表已完成 */
+            --text-main: #1d1d1f;
+            --text-muted: #636e72;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            margin: 0; line-height: 1.4; color: var(--text-main); background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav { 
+            display: flex; justify-content: flex-end; padding: 15px 10%; 
+            border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100;
+        }
+        nav a { margin-left: 28px; text-decoration: none; color: #555; font-weight: 600; font-size: 0.85rem; }
+        nav a:hover { color: var(--color-ongoing); }
+
+        .container { max-width: 850px; margin: 40px auto; padding: 0 30px; }
+
+        h1 { 
+            font-family: 'Lora', serif;
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            margin-bottom: 35px; 
+            color: #000; 
+            letter-spacing: -0.02em;
+        }
+
+        .section-title { 
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem; 
+            margin: 35px 0 15px; 
+            border-bottom: 1.5px solid #000; 
+            padding-bottom: 4px; 
+            font-weight: 700; 
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .project-row { margin-bottom: 30px; padding: 4px 0; }
+
+        /* 沿用论文页的直角拼接标签 */
+        .split-tag {
+            display: inline-flex; overflow: hidden; font-size: 0.6rem; font-weight: 800; 
+            margin-bottom: 8px; border-radius: 0px; height: 18px; align-items: center;
+        }
+        .tag-l { background: var(--tag-dark); color: #fff; padding: 0 8px; height: 100%; display: flex; align-items: center; }
+        .tag-r { color: #fff; padding: 0 10px; height: 100%; display: flex; align-items: center; }
+        .bg-ongoing { background: var(--color-ongoing); }
+        .bg-completed { background: var(--color-completed); }
+
+        .project-name { font-size: 1.1rem; font-weight: 700; color: #000; margin-bottom: 5px; display: block; }
+        .project-role { font-size: 0.88rem; color: #444; font-weight: 600; margin-bottom: 4px; display: block; }
+        .project-desc { font-size: 0.9rem; color: #555; margin-bottom: 8px; line-height: 1.5; }
+        .project-meta { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; display: block; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../publications/index.html">Publications</a>
+        <a href="index.html">Projects</a>
+        <a href="../cv.html">CV</a>
+    </nav>
+
+    <div class="container">
+        <h1>Projects</h1>
+
+        <div class="section-title">Research Projects</div>
+
+        <div class="project-row">
+            <div class="split-tag"><span class="tag-l">Project</span><span class="tag-r bg-ongoing">Ongoing</span></div>
+            <span class="project-name">NorthKoreanEval: Cultural & Linguistic Benchmark for North Korean Understanding</span>
+            <span class="project-role">Lead Researcher</span>
+            <p class="project-desc">Developing a comprehensive benchmark to assess LLMs' understanding of North Korean culture, vocabulary, and orthography, addressing the South Korean-centric bias in current NLP models.</p>
+            <span class="project-meta">2026 – Present | Supported by Yonsei University</span>
+        </div>
+
+        <div class="project-row">
+            <div class="split-tag"><span class="tag-l">Project</span><span class="tag-r bg-completed">Completed</span></div>
+            <span class="project-name">K-NameDiag: Error-Driven Prompting for PII Recognition</span>
+            <span class="project-role">Primary Contributor</span>
+            <p class="project-desc">Constructed a "Diagnose-and-Mitigate" framework to improve LLM performance in recognizing culturally specific Korean names for privacy-preserving data generation.</p>
+            <span class="project-meta">2025 | Collaboration with Tscientific</span>
+        </div>
+
+        <div class="section-title">National R&D Participation</div>
+
+        <div class="project-row">
+            <div class="split-tag"><span class="tag-l">R&D</span><span class="tag-r bg-ongoing">2024–2026</span></div>
+            <span class="project-name">Development of Statistics-Maintaining Personal Data Generation Technology</span>
+            <span class="project-role">Graduate Researcher (RA)</span>
+            <p class="project-desc">Working on LLM safety alignment and de-identification performance judgment in collaboration with KISA and WorldVertex.</p>
+            <span class="project-meta">Grant No. 2024-0-XXXXX | Funded by KISA / MSIT</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
