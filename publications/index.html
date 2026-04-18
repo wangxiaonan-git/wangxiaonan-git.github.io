@@ -22,11 +22,36 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        nav { 
-            display: flex; justify-content: flex-end; padding: 15px 10%; 
-            border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100;
-        }
-        nav a { margin-left: 28px; text-decoration: none; color: #555; font-weight: 600; font-size: 0.85rem; }
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 22px 10%;
+    background-color: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f2f2f2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    margin-left: 35px;
+    text-decoration: none;
+    color: #515154; /* 稍深的灰色，更有力量感 */
+    font-family: 'Inter', -apple-system, system-ui, sans-serif; /* 扎实的现代字体 */
+    font-weight: 500;
+    font-size: 0.95rem; /* 字号略微调大，更显稳重 */
+    letter-spacing: -0.01em; /* 稍微紧凑一点，拒绝网红散漫感 */
+    text-transform: none; /* 关键：取消全大写，使用正常大小写 */
+    transition: all 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #000; /* 选中变黑 */
+    font-weight: 600; /* 选中时加粗 */
+}
+
 
         .container { max-width: 850px; margin: 40px auto; padding: 0 30px; }
 
