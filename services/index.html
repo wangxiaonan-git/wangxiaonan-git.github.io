@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Xiaonan Wang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tag-dark: #333;
+            --color-teaching: #3d5a80; /* 深蓝色代表教学 */
+            --color-reviewing: #e67e22; /* 橙色代表审稿/服务 */
+            --text-main: #1d1d1f;
+            --text-muted: #636e72;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            margin: 0; line-height: 1.4; color: var(--text-main); background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav { 
+            display: flex; justify-content: flex-end; padding: 15px 10%; 
+            border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100;
+        }
+        nav a { margin-left: 28px; text-decoration: none; color: #555; font-weight: 600; font-size: 0.85rem; }
+        nav a:hover { color: var(--color-teaching); }
+
+        .container { max-width: 850px; margin: 40px auto; padding: 0 30px; }
+
+        h1 { 
+            font-family: 'Lora', serif;
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            margin-bottom: 35px; 
+            color: #000; 
+            letter-spacing: -0.02em;
+        }
+
+        .section-title { 
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem; 
+            margin: 35px 0 15px; 
+            border-bottom: 1.5px solid #000; 
+            padding-bottom: 4px; 
+            font-weight: 700; 
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .service-row { margin-bottom: 25px; padding: 4px 0; }
+
+        .split-tag {
+            display: inline-flex; overflow: hidden; font-size: 0.6rem; font-weight: 800; 
+            margin-bottom: 8px; border-radius: 0px; height: 18px; align-items: center;
+        }
+        .tag-l { background: var(--tag-dark); color: #fff; padding: 0 8px; height: 100%; display: flex; align-items: center; }
+        .tag-r { color: #fff; padding: 0 10px; height: 100%; display: flex; align-items: center; }
+        .bg-teaching { background: var(--color-teaching); }
+        .bg-reviewing { background: var(--color-reviewing); }
+
+        .service-name { font-size: 1.05rem; font-weight: 700; color: #000; margin-bottom: 4px; display: block; }
+        .service-desc { font-size: 0.9rem; color: #444; margin-bottom: 2px; line-height: 1.5; }
+        .service-meta { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; display: block; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../publications/index.html">Publications</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="index.html" style="color: var(--color-teaching);">Services</a>
+        <a href="../cv.html">CV</a>
+    </nav>
+
+    <div class="container">
+        <h1>Academic Service</h1>
+
+        <div class="section-title">Teaching Experience</div>
+
+        <div class="service-row">
+            <div class="split-tag"><span class="tag-l">Teaching</span><span class="tag-r bg-teaching">TA</span></div>
+            <span class="service-name">HUM2041: Computational Analysis of Language</span>
+            <span class="service-desc">Graduate Teaching Assistant for Prof. Hansaem Kim. Responsible for leading coding sessions and managing assignments in computational linguistics.</span>
+            <span class="service-meta">Yonsei University | 2025 – Present</span>
+        </div>
+
+        <div class="section-title">Professional Service</div>
+
+        <div class="service-row">
+            <div class="split-tag"><span class="tag-l">Reviewing</span><span class="tag-r bg-reviewing">Program Committee</span></div>
+            <span class="service-name">Conference on Empirical Methods in Natural Language Processing (EMNLP)</span>
+            <span class="service-desc">Secondary Reviewer / Sub-reviewer.</span>
+            <span class="service-meta">2025</span>
+        </div>
+
+        <div class="service-row">
+            <div class="split-tag"><span class="tag-l">Reviewing</span><span class="tag-r bg-reviewing">Peer Review</span></div>
+            <span class="service-name">Applied Sciences (MDPI)</span>
+            <span class="service-desc">Reviewer for manuscripts in the field of Multilingual NLP and LLM Security.</span>
+            <span class="service-meta">2025 – Present</span>
+        </div>
+
+        <div class="service-row">
+            <div class="split-tag"><span class="tag-l">Reviewing</span><span class="tag-r bg-reviewing">Peer Review</span></div>
+            <span class="service-name">Annual Conference on Human & Cognitive Language Technology (HCLT)</span>
+            <span class="service-desc">Reviewing domestic research papers on Korean language processing.</span>
+            <span class="service-meta">2025</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
