@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Xiaonan Wang</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --tag-type: #333;       /* 类别：深黑 */
-            --tag-status: #546e7a;   /* 状态：灰蓝 */
-            --tag-year: #86868b;     /* 年份：浅灰 */
+            --tag-type: #333;       
+            --tag-status: #546e7a;   
+            --tag-year: #86868b;     
             --text-main: #1d1d1f;
-            --text-muted: #636e72;
+            --text-muted: #86868b;
         }
 
         body { 
@@ -22,7 +22,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 导航栏样式同步 */
         nav {
             display: flex;
             justify-content: flex-end;
@@ -48,23 +47,21 @@
 
         nav a:hover, nav a.active { color: #000; font-weight: 600; }
 
-        .container { max-width: 850px; margin: 60px auto; padding: 0 30px; }
+        .container { max-width: 800px; margin: 60px auto; padding: 0 30px; }
 
         h1 { 
             font-size: 2.5rem; 
             font-weight: 700; 
-            margin-bottom: 45px; 
+            margin-bottom: 50px; 
             color: #000; 
             letter-spacing: -0.02em;
         }
 
-        /* 项目条目布局 */
-        .project-row { margin-bottom: 45px; }
+        .project-row { margin-bottom: 40px; }
 
-        /* 三色拼接标签实现 */
         .tri-tag {
             display: inline-flex; overflow: hidden; font-size: 0.65rem; font-weight: 700; 
-            margin-bottom: 12px; height: 20px; align-items: center; text-transform: uppercase;
+            margin-bottom: 10px; height: 18px; align-items: center; text-transform: uppercase;
             letter-spacing: 0.03em;
         }
         .tag-part { padding: 0 10px; height: 100%; display: flex; align-items: center; color: #fff; }
@@ -72,10 +69,9 @@
         .t-status { background: var(--tag-status); }
         .t-year { background: var(--tag-year); }
 
-        .project-name { font-size: 1.25rem; font-weight: 700; color: #000; margin-bottom: 6px; display: block; }
-        .project-role { font-size: 0.9rem; color: #d93025; font-weight: 600; margin-bottom: 8px; display: block; }
-        .project-desc { font-size: 0.95rem; color: #444; margin-bottom: 10px; line-height: 1.6; text-align: justify;}
-        .project-funding { font-size: 0.82rem; color: var(--text-muted); font-style: italic; display: block; }
+        .project-name { font-size: 1.15rem; font-weight: 700; color: #000; margin-bottom: 4px; display: block; }
+        .project-role { font-size: 0.9rem; color: #000; font-weight: 600; margin-bottom: 6px; display: block; }
+        .project-funding { font-size: 0.85rem; color: var(--text-muted); display: block; }
 
         @media (max-width: 768px) {
             .container { margin: 30px auto; padding: 0 20px; }
@@ -96,11 +92,21 @@
             <div class="tri-tag">
                 <span class="tag-part t-type">National R&D</span>
                 <span class="tag-part t-status">Ongoing</span>
+                <span class="tag-part t-year">2026</span>
+            </div>
+            <span class="project-name">Development of Personal Information Detection and De-identification Technology in Voice Phishing Voice Data</span>
+            <span class="project-role">Researcher & Team Leader</span>
+            <span class="project-funding">Funded by Korea Internet & Security Agency (KISA)</span>
+        </div>
+
+        <div class="project-row">
+            <div class="tri-tag">
+                <span class="tag-part t-type">National R&D</span>
+                <span class="tag-part t-status">Ongoing</span>
                 <span class="tag-part t-year">2025 – 2026</span>
             </div>
-            <span class="project-name">Development of Multi-modal AI-based Privacy Detection, Tracking, and De-identification Technology</span>
+            <span class="project-name">Development of Personal Information De-identification Technology within Suspicious Criminal Information</span>
             <span class="project-role">Researcher & Team Leader</span>
-            <p class="project-desc">Leading the research on personal information de-identification within multimodal datasets and suspicious criminal information. Responsible for developing technology to detect and anonymize PII across diverse media types to ensure data privacy and security compliance.</p>
             <span class="project-funding">Funded by Korea Internet & Security Agency (KISA)</span>
         </div>
 
@@ -112,7 +118,6 @@
             </div>
             <span class="project-name">Cross-5: Development of Multi-lingual Benchmarks for Evaluating AI's Indirect Speech Act Capabilities</span>
             <span class="project-role">Researcher</span>
-            <p class="project-desc">Investigating whether AI possesses "Nunchi" (social tact) comparable to humans by developing benchmarks that evaluate the ability of LLMs to understand and process indirect speech acts across five different languages.</p>
             <span class="project-funding">Yonsei University AI Innovation Institute</span>
         </div>
 
@@ -124,7 +129,6 @@
             </div>
             <span class="project-name">Construction of Scalable Multi-modal Generative Foundation Model Data for Industrial AI Transformation</span>
             <span class="project-role">Researcher</span>
-            <p class="project-desc">Contributed to the development and curation of large-scale multimodal datasets designed to facilitate the transition of traditional industries into AI-driven ecosystems through generative foundation models.</p>
             <span class="project-funding">National Information Society Agency (NIA)</span>
         </div>
 
@@ -136,20 +140,7 @@
             </div>
             <span class="project-name">Development of Korean-specific LLM Benchmarks for Evaluating Korean Language Proficiency</span>
             <span class="project-role">Researcher</span>
-            <p class="project-desc">Focused on the 2024 Humanities Korea Plus (HK+) initiative to build evaluative frameworks specifically tailored for assessing the linguistic and cultural nuances of the Korean language in Large Language Models.</p>
-            <span class="project-funding">Yonsei University / National Research Foundation of Korea</span>
-        </div>
-
-        <div class="project-row">
-            <div class="tri-tag">
-                <span class="tag-part t-type">Academic</span>
-                <span class="tag-part t-status">Ongoing</span>
-                <span class="tag-part t-year">2026</span>
-            </div>
-            <span class="project-name">NorthKoreanEval: Cultural & Linguistic Alignment for North Korean Dialectal Contexts</span>
-            <span class="project-role">Lead Researcher</span>
-            <p class="project-desc">Designing a specialized benchmark to measure LLM performance on North Korean linguistic rules, vocabulary, and cultural context, addressing current biases in South Korean-centric models.</p>
-            <span class="project-funding">Internal Laboratory Project</span>
+            <span class="project-funding">Yonsei University</span>
         </div>
 
     </div>
