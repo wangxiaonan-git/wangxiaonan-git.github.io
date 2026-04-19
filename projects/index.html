@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Xiaonan Wang</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --tag-type: #333;       
@@ -22,6 +22,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* 导航栏样式同步 */
         nav {
             display: flex;
             justify-content: flex-end;
@@ -47,9 +48,11 @@
 
         nav a:hover, nav a.active { color: #000; font-weight: 600; }
 
-        .container { max-width: 800px; margin: 60px auto; padding: 0 30px; }
+        .container { max-width: 850px; margin: 60px auto; padding: 0 30px; }
 
+        /* 恢复你要求的 Lora 衬线体大标题 */
         h1 { 
+            font-family: 'Lora', serif;
             font-size: 2.5rem; 
             font-weight: 700; 
             margin-bottom: 50px; 
@@ -59,6 +62,7 @@
 
         .project-row { margin-bottom: 40px; }
 
+        /* 三色拼接标签实现 */
         .tri-tag {
             display: inline-flex; overflow: hidden; font-size: 0.65rem; font-weight: 700; 
             margin-bottom: 10px; height: 18px; align-items: center; text-transform: uppercase;
@@ -95,7 +99,7 @@
                 <span class="tag-part t-year">2025 – 2026</span>
             </div>
             <span class="project-name">Development of Personal Information De-identification Technology in Suspicious Criminal Information</span>
-            <span class="project-role">Researcher</span>
+            <span class="project-role">Researcher & Team Leader</span>
             <span class="project-funding">Funded by Institute of Information & Communications Technology Planning & Evaluation (IITP)</span>
         </div>
 
@@ -105,7 +109,7 @@
                 <span class="tag-part t-status">Ongoing</span>
                 <span class="tag-part t-year">2025 – 2026</span>
             </div>
-            <span class="project-name">Development of Multi-modal AI-based Personal Information Detection, Tracking, and De-identification Technology</span>
+            <span class="project-name">Multi-modal AI-based Personal Information Detection, Tracking, and De-identification Technology</span>
             <span class="project-role">Researcher & Team Leader</span>
             <span class="project-funding">Funded by Korea Internet & Security Agency (KISA)</span>
         </div>
