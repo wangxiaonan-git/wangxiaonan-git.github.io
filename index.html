@@ -64,7 +64,7 @@
         }
 
         .profile-info {
-            text-align: center; /* 个人信息部分保持居中 */
+            text-align: center;
             margin-bottom: 40px;
         }
 
@@ -89,12 +89,12 @@
         .sidebar h3 { font-size: 1.6rem; font-weight: 700; color: #000; margin: 0 0 5px 0; }
         .sidebar p { font-size: 0.95rem; color: #515154; margin: 0; line-height: 1.5; }
 
-        /* 侧边栏 News 专门改为左对齐 */
+        /* 侧边栏 News */
         .sidebar-news {
             padding-top: 25px;
             border-top: 1px solid #f2f2f2;
-            text-align: left; /* 核心修改：News 整体左对齐 */
-            padding-left: 10px; /* 增加微调间距，不让文字紧贴边缘 */
+            text-align: left;
+            padding-left: 10px;
         }
         .sidebar-news h4 {
             font-size: 0.9rem;
@@ -111,11 +111,13 @@
             margin-bottom: 15px; 
             color: #1d1d1f; 
         }
-        .sidebar-news li strong { 
-            display: block; 
-            color: #86868b; 
-            font-size: 0.75rem; 
-            margin-bottom: 2px;
+
+        /* 访客地图容器样式 */
+        .visitor-map-container {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #f2f2f2;
+            text-align: center;
         }
 
         /* 5. 右侧主内容区 */
@@ -154,7 +156,7 @@
                 <p style="font-size: 0.85rem; margin-top: 8px; color: #86868b;">nan@yonsei.ac.kr</p>
             </div>
 
-<div class="sidebar-news">
+            <div class="sidebar-news">
                 <h4>News</h4>
                 <ul>
                     <li>
@@ -198,10 +200,15 @@
                         Selected as a Samsung Global Hope Scholar with full fellowship 🌟
                     </li>
                 </ul>
-            </div>
 
-</aside> <main class="main-content">
-            
+                <div class="visitor-map-container">
+                    <h4 style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 15px; color: #86868b;">Visitors</h4>
+                    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=2hdELQUXGbZXhd7nU8b6DM0o0lTQDMdsI0TK710fQRU"></script>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
             <section id="about">
                 <h1>About Me</h1>
                 <p>I am a Ph.D. student in Computational Linguistics at Yonsei University, advised by Professor Hansaem Kim. As a researcher at the Data & Resource Convergence Lab, my research focuses on enhancing the cultural and security alignment of LLMs by investigating evaluative methodologies to ensure privacy protection and linguistic reliability across diverse cultural and dialectal contexts. </p>
@@ -216,7 +223,6 @@
                     <span style="color: #188038; font-weight: 600;">cross-cultural evaluation</span>. 
                     I am especially interested in how LLMs acquire and deploy culturally-specific knowledge, the internal mechanisms underlying cross-lingual generalization failures, and the development of robust diagnostic benchmarks for privacy and security.
                 </p>
-
                 <p style="margin-top: 15px; font-weight: 500; line-height: 1.4;">
                     Feel free to reach out for collaborations on 
                     <span style="color: #1a73e8;">NLP</span>, 
@@ -244,7 +250,6 @@
                     <div style="font-size: 0.95rem; color: #333;">M.A. in English Translation & Interpretation Studies (GPA: 4.15 / 4.5)</div>
                 </div>
             </section>
-
         </main>
     </div>
 
