@@ -10,22 +10,18 @@
 
     <style>
         .fluid-img {
-    object-fit: cover;
-    object-position: left center;
-}
+            object-fit: cover;
+            object-position: left center;
+        }
+
         :root {
             --text-main: #1d1d1f;
             --text-muted: #5f6368;
             --line: #eeeeee;
-            --ribbon-blue: #172033;
+            --ribbon-blue: #2c4f7d;
 
-            --culture-bg: #fff1e8;
             --culture-text: #d86b21;
-
-            --privacy-bg: #eef0ff;
             --privacy-text: #4f5bd5;
-
-            --geo-bg: #e9f7f4;
             --geo-text: #138a72;
         }
 
@@ -99,6 +95,11 @@
             gap: 28px;
             margin-bottom: 34px;
             align-items: start;
+        }
+
+        .pub-row.no-thumb {
+            display: block;
+            margin-bottom: 30px;
         }
 
         .pub-thumb-wrap {
@@ -189,21 +190,19 @@
             padding: 3px 7px;
             border-radius: 999px;
             line-height: 1.25;
+            color: #fff;
         }
 
         .topic-culture {
-            background: var(--culture-bg);
-            color: var(--culture-text);
+            background: var(--culture-text);
         }
 
         .topic-privacy {
-            background: var(--privacy-bg);
-            color: var(--privacy-text);
+            background: var(--privacy-text);
         }
 
         .topic-geo {
-            background: var(--geo-bg);
-            color: var(--geo-text);
+            background: var(--geo-text);
         }
 
         @media (max-width: 768px) {
@@ -237,6 +236,10 @@
             .pub-thumb {
                 width: 100%;
                 height: 160px;
+            }
+
+            .pub-row.no-thumb {
+                display: block;
             }
         }
     </style>
@@ -321,23 +324,6 @@
 
     <div class="pub-row">
         <div class="pub-thumb-wrap">
-            <div class="venue-ribbon">HCLT 2025</div>
-            <div class="pub-thumb">
-                <img src="images/hclt2025-safety.png" alt="">
-            </div>
-        </div>
-        <div>
-            <a class="pub-title">Designing AI Safety Alignment Datasets and Training Strategies</a>
-            <span class="pub-authors">Joeun Kang, Chaean Kang, Heejae Kim, <span class="me">Xiaonan Wang</span>, Hansaem Kim.</span>
-            <span class="pub-venue">Human & Cognitive Language Technology</span>
-            <div class="topic-tags">
-                <span class="topic-tag topic-privacy">AI Privacy & Safety</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="pub-row">
-        <div class="pub-thumb-wrap">
             <div class="venue-ribbon">PACLIC 2024</div>
             <div class="pub-thumb">
                 <img src="/assets/css/images/kulture.png" alt="">
@@ -372,13 +358,20 @@
         </div>
     </div>
 
-    <div class="pub-row">
-        <div class="pub-thumb-wrap">
-            <div class="venue-ribbon">KCI</div>
-            <div class="pub-thumb">
-                <img src="images/ai-humanities2025-safety.png" alt="">
+    <div class="section-title">Domestic Publications</div>
+
+    <div class="pub-row no-thumb">
+        <div>
+            <a class="pub-title">Designing AI Safety Alignment Datasets and Training Strategies</a>
+            <span class="pub-authors">Joeun Kang, Chaean Kang, Heejae Kim, <span class="me">Xiaonan Wang</span>, Hansaem Kim.</span>
+            <span class="pub-venue">Human & Cognitive Language Technology</span>
+            <div class="topic-tags">
+                <span class="topic-tag topic-privacy">AI Privacy & Safety</span>
             </div>
         </div>
+    </div>
+
+    <div class="pub-row no-thumb">
         <div>
             <a class="pub-title">Safety Evaluation of Large Language Models - Analysis of Domestic and Foreign Datasets [In Korean]</a>
             <span class="pub-authors">Joeun Kang, Chaean Kang, Seoyoon Park, Gyuri Choi, Gayeon Jeong, Minseon Kim, Hyeji Choi, Subin An, Heejae Kim, <span class="me">Xiaonan Wang</span>, Yechan Na, Hansaem Kim.</span>
