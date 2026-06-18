@@ -5,23 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Xiaonan Wang</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --text-main: #1d1d1f;
-            --text-muted: #636e72;
-            --badge-bg: #f5f5f7;
-            --badge-border: #e5e5e7;
-            --badge-text: #555;
+            --text-muted: #6e6e73;
+            --line: #e8e8ed;
+            --soft: #f5f5f7;
         }
 
-        body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
-            line-height: 1.35;
+            line-height: 1.42;
             color: var(--text-main);
-            background-color: #fff;
+            background: #fff;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -29,7 +27,7 @@
             display: flex;
             justify-content: flex-end;
             padding: 22px 10%;
-            background-color: rgba(255, 255, 255, 0.9); 
+            background-color: rgba(255,255,255,0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid #f2f2f2;
@@ -42,11 +40,9 @@
             margin-left: 35px;
             text-decoration: none;
             color: #515154;
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             font-weight: 500;
             font-size: 0.95rem;
             letter-spacing: -0.01em;
-            text-transform: none;
             transition: all 0.2s ease;
         }
 
@@ -56,63 +52,81 @@
         }
 
         .container {
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 0 30px;
+            max-width: 900px;
+            margin: 42px auto;
+            padding: 0 32px;
         }
 
-        h1 { 
+        h1 {
             font-family: 'Lora', serif;
-            font-size: 2.2rem; 
-            font-weight: 700; 
-            margin-bottom: 35px; 
-            color: #000; 
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 38px;
+            color: #000;
             letter-spacing: -0.02em;
         }
 
-        .section-title { 
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem; 
-            margin: 35px 0 15px; 
-            border-bottom: 1.5px solid #000; 
-            padding-bottom: 4px; 
-            font-weight: 700; 
-            color: #000;
+        .section-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.09em;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            color: #000;
+            border-bottom: 1.5px solid #000;
+            padding-bottom: 6px;
+            margin: 42px 0 18px;
         }
 
-        .pub-row {
-            margin-bottom: 22px;
-            padding: 4px 0;
+        .pub-item {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            column-gap: 24px;
+            padding: 18px 0 20px;
+            border-bottom: 1px solid var(--line);
         }
 
-        .pub-badge {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: var(--badge-text);
-            background: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            border-radius: 999px;
-            padding: 3px 10px;
+        .pub-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .pub-venue-short {
+            font-weight: 700;
+            color: #000;
+            font-size: 0.88rem;
+            margin-bottom: 2px;
+        }
+
+        .pub-year {
+            color: var(--text-muted);
             margin-bottom: 8px;
-            letter-spacing: -0.01em;
+        }
+
+        .pub-note {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #555;
+            background: var(--soft);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 2px 8px;
+            margin-top: 3px;
         }
 
         .pub-title {
-            font-size: 1.05rem;
+            font-size: 1.03rem;
             font-weight: 700;
             color: #000;
-            margin-bottom: 3px;
-            display: block;
+            margin-bottom: 5px;
+            letter-spacing: -0.01em;
         }
 
         .pub-authors {
             font-size: 0.88rem;
             color: #444;
-            margin-bottom: 2px;
-            display: block;
+            margin-bottom: 4px;
         }
 
         .me {
@@ -125,7 +139,6 @@
             font-size: 0.82rem;
             color: var(--text-muted);
             font-weight: 500;
-            display: block;
         }
 
         @media (max-width: 768px) {
@@ -148,78 +161,140 @@
                 margin: 0 10px;
                 font-size: 0.85rem;
             }
+
+            .pub-item {
+                grid-template-columns: 1fr;
+                row-gap: 8px;
+            }
+
+            .pub-meta {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .pub-year {
+                margin-bottom: 0;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <nav></nav>
+<nav></nav>
 
-    <div class="container">
-        <h1>Publications</h1>
+<div class="container">
 
-        <div class="section-title">Conference Papers</div>
+    <h1>Publications</h1>
 
-        <div class="pub-row">
-            <div class="pub-badge">ACL 2026 · Main</div>
-            <span class="pub-title">Subject-level Inference for Realistic Text Anonymization Evaluation</span>
-            <span class="pub-authors">Myeong Seok Oh, Dong-Yun Kim, Hanseok Oh, Chaean Kang, Joeun Kang, <span class="me">Xiaonan Wang</span>, Hyunjung Park, Young Cheol Jung, Hansaem Kim.</span>
-            <span class="pub-venue">The 64th Annual Meeting of the Association for Computational Linguistics</span>
+    <div class="section-title">Conference Papers</div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">ACL</div>
+            <div class="pub-year">2026</div>
+            <div class="pub-note">Main</div>
         </div>
-
-        <div class="pub-row">
-            <div class="pub-badge">EMNLP 2025 · Main</div>
-            <span class="pub-title">AI Knows Where You Are: Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO</span>
-            <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Bo Shao, Hansaem Kim.</span>
-            <span class="pub-venue">Conference on Empirical Methods in Natural Language Processing</span>
+        <div>
+            <div class="pub-title">Subject-level Inference for Realistic Text Anonymization Evaluation</div>
+            <div class="pub-authors">Myeong Seok Oh, Dong-Yun Kim, Hanseok Oh, Chaean Kang, Joeun Kang, <span class="me">Xiaonan Wang</span>, Hyunjung Park, Young Cheol Jung, Hansaem Kim.</div>
+            <div class="pub-venue">The 64th Annual Meeting of the Association for Computational Linguistics</div>
         </div>
-
-        <div class="pub-row">
-            <div class="pub-badge">EMNLP 2025 · Main</div>
-            <span class="pub-title">FLUID QA: A Multilingual Benchmark for Figurative Language Usage in Dialogue across English, Chinese, and Korean</span>
-            <span class="pub-authors">Seoyoon Park, Hyeji Choi, Minseon Kim, Subin An, <span class="me">Xiaonan Wang</span>, Gyuri Choi, Hansaem Kim.</span>
-            <span class="pub-venue">Conference on Empirical Methods in Natural Language Processing</span>
-        </div>
-
-        <div class="pub-row">
-            <div class="pub-badge">RANLP 2025</div>
-            <span class="pub-title">Benchmarking Korean Idiom Understanding: A Comparative Analysis of Local and Global Models</span>
-            <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Seoyoon Park, Hansaem Kim.</span>
-            <span class="pub-venue">Recent Advances in Natural Language Processing</span>
-        </div>
-
-        <div class="pub-row">
-            <div class="pub-badge">HCLT 2025</div>
-            <span class="pub-title">Designing AI Safety Alignment Datasets and Training Strategies</span>
-            <span class="pub-authors">Joeun Kang, Chaean Kang, Heejae Kim, <span class="me">Xiaonan Wang</span>, Hansaem Kim.</span>
-            <span class="pub-venue">Human & Cognitive Language Technology</span>
-        </div>
-
-        <div class="pub-row">
-            <div class="pub-badge">PACLIC 2024</div>
-            <span class="pub-title">KULTURE bench: A benchmark for assessing language model in Korean cultural context</span>
-            <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Jinyoung Yeo, Joon-Ho Lim, Hansaem Kim.</span>
-            <span class="pub-venue">Pacific Asia Conference on Language, Information and Computation</span>
-        </div>
-
-        <div class="section-title">Journal Articles</div>
-
-        <div class="pub-row">
-            <div class="pub-badge">Applied Sciences 2025 · SCI(E)</div>
-            <span class="pub-title">Diagnosing and Mitigating LLM Failures in Recognizing Culturally Specific Korean Names: An Error-Driven Prompting Framework</span>
-            <span class="pub-authors"><span class="me">Xiaonan Wang</span>, Gyuri Choi, Subin An, Joeun Kang, Seoyoon Park, Hyeji Choi, Jongkyu Lee, Hansaem Kim.</span>
-            <span class="pub-venue">Applied Sciences</span>
-        </div>
-
-        <div class="pub-row">
-            <div class="pub-badge">Journal of AI Humanities 2025 · KCI</div>
-            <span class="pub-title">Safety Evaluation of Large Language Models - Analysis of Domestic and Foreign Datasets [In Korean]</span>
-            <span class="pub-authors">Joeun Kang, Chaean Kang, Seoyoon Park, Gyuri Choi, Gayeon Jeong, Minseon Kim, Hyeji Choi, Subin An, Heejae Kim, <span class="me">Xiaonan Wang</span>, Yechan Na, Hansaem Kim.</span>
-            <span class="pub-venue">Journal of AI Humanities</span>
-        </div>
-
     </div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">EMNLP</div>
+            <div class="pub-year">2025</div>
+            <div class="pub-note">Main</div>
+        </div>
+        <div>
+            <div class="pub-title">AI Knows Where You Are: Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO</div>
+            <div class="pub-authors"><span class="me">Xiaonan Wang</span>, Bo Shao, Hansaem Kim.</div>
+            <div class="pub-venue">Conference on Empirical Methods in Natural Language Processing</div>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">EMNLP</div>
+            <div class="pub-year">2025</div>
+            <div class="pub-note">Main</div>
+        </div>
+        <div>
+            <div class="pub-title">FLUID QA: A Multilingual Benchmark for Figurative Language Usage in Dialogue across English, Chinese, and Korean</div>
+            <div class="pub-authors">Seoyoon Park, Hyeji Choi, Minseon Kim, Subin An, <span class="me">Xiaonan Wang</span>, Gyuri Choi, Hansaem Kim.</div>
+            <div class="pub-venue">Conference on Empirical Methods in Natural Language Processing</div>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">RANLP</div>
+            <div class="pub-year">2025</div>
+        </div>
+        <div>
+            <div class="pub-title">Benchmarking Korean Idiom Understanding: A Comparative Analysis of Local and Global Models</div>
+            <div class="pub-authors"><span class="me">Xiaonan Wang</span>, Seoyoon Park, Hansaem Kim.</div>
+            <div class="pub-venue">Recent Advances in Natural Language Processing</div>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">HCLT</div>
+            <div class="pub-year">2025</div>
+        </div>
+        <div>
+            <div class="pub-title">Designing AI Safety Alignment Datasets and Training Strategies</div>
+            <div class="pub-authors">Joeun Kang, Chaean Kang, Heejae Kim, <span class="me">Xiaonan Wang</span>, Hansaem Kim.</div>
+            <div class="pub-venue">Human & Cognitive Language Technology</div>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">PACLIC</div>
+            <div class="pub-year">2024</div>
+        </div>
+        <div>
+            <div class="pub-title">KULTURE bench: A benchmark for assessing language model in Korean cultural context</div>
+            <div class="pub-authors"><span class="me">Xiaonan Wang</span>, Jinyoung Yeo, Joon-Ho Lim, Hansaem Kim.</div>
+            <div class="pub-venue">Pacific Asia Conference on Language, Information and Computation</div>
+        </div>
+    </div>
+
+    <div class="section-title">Journal Articles</div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">SCI(E)</div>
+            <div class="pub-year">2025</div>
+            <div class="pub-note">IF 2.5</div>
+        </div>
+        <div>
+            <div class="pub-title">Diagnosing and Mitigating LLM Failures in Recognizing Culturally Specific Korean Names: An Error-Driven Prompting Framework</div>
+            <div class="pub-authors"><span class="me">Xiaonan Wang</span>, Gyuri Choi, Subin An, Joeun Kang, Seoyoon Park, Hyeji Choi, Jongkyu Lee, Hansaem Kim.</div>
+            <div class="pub-venue">Applied Sciences</div>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <div class="pub-meta">
+            <div class="pub-venue-short">KCI</div>
+            <div class="pub-year">2025</div>
+            <div class="pub-note">IF 3.16</div>
+        </div>
+        <div>
+            <div class="pub-title">Safety Evaluation of Large Language Models - Analysis of Domestic and Foreign Datasets [In Korean]</div>
+            <div class="pub-authors">Joeun Kang, Chaean Kang, Seoyoon Park, Gyuri Choi, Gayeon Jeong, Minseon Kim, Hyeji Choi, Subin An, Heejae Kim, <span class="me">Xiaonan Wang</span>, Yechan Na, Hansaem Kim.</div>
+            <div class="pub-venue">Journal of AI Humanities</div>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
