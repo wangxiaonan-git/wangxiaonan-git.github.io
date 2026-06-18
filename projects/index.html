@@ -12,29 +12,25 @@
 
     <style>
         :root {
-            --text-main: #171719;
-            --text-muted: #77777d;
-            --text-soft: #a0a0a7;
-            --line: rgba(20, 20, 24, 0.075);
-            --line-strong: rgba(20, 20, 24, 0.12);
-            --bg: #fbfbfc;
+            --text-main: #1d1d1f;
+            --text-muted: #4f4f55;
+            --text-soft: #8a8a91;
+            --line: rgba(0, 0, 0, 0.105);
+            --line-soft: rgba(0, 0, 0, 0.055);
 
-            --navy: #172554;
-            --bluegray: #596779;
-            --sage: #6f8f7c;
-            --sand: #b89a6a;
-            --wine: #8f5d68;
+            --government: #172554;
+            --university: #4b5563;
+            --contract: #6f5f3f;
+            --ongoing: #4f7665;
+            --completed: #8a7a64;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
-            line-height: 1.45;
+            line-height: 1.4;
             color: var(--text-main);
-            background:
-                radial-gradient(circle at 12% 8%, rgba(23, 37, 84, 0.045), transparent 28%),
-                radial-gradient(circle at 88% 18%, rgba(184, 154, 106, 0.045), transparent 26%),
-                linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+            background-color: #fff;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -42,10 +38,10 @@
             display: flex;
             justify-content: flex-end;
             padding: 22px 10%;
-            background-color: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid #f2f2f2;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -69,7 +65,7 @@
 
         .container {
             max-width: 860px;
-            margin: 58px auto 78px;
+            margin: 54px auto 70px;
             padding: 0 30px;
         }
 
@@ -77,126 +73,113 @@
             font-family: 'Lora', serif;
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 50px;
+            margin-bottom: 42px;
             color: #000;
             letter-spacing: -0.02em;
         }
 
         .project-list {
-            border-top: 1px solid var(--line-strong);
+            border-top: 1px solid var(--line);
         }
 
         .project-row {
             display: grid;
-            grid-template-columns: 118px 1fr;
-            column-gap: 34px;
-            padding: 28px 0;
-            border-bottom: 1px solid var(--line);
-            position: relative;
-        }
-
-        .project-row::before {
-            content: "";
-            position: absolute;
-            left: 118px;
-            top: 28px;
-            bottom: 28px;
-            width: 1px;
-            background: linear-gradient(
-                180deg,
-                rgba(23, 37, 84, 0.18),
-                rgba(23, 37, 84, 0.035)
-            );
+            grid-template-columns: 106px 1fr;
+            column-gap: 26px;
+            padding: 21px 0;
+            border-bottom: 1px solid var(--line-soft);
         }
 
         .project-year {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             color: var(--text-soft);
             font-weight: 600;
-            letter-spacing: 0.01em;
             padding-top: 2px;
             white-space: nowrap;
+            letter-spacing: -0.005em;
         }
 
         .project-content {
-            padding-left: 28px;
+            min-width: 0;
         }
 
         .project-top {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 7px;
+            margin-bottom: 7px;
             flex-wrap: wrap;
         }
 
         .pill {
             display: inline-flex;
             align-items: center;
-            height: 20px;
-            padding: 0 9px;
+            height: 19px;
+            padding: 0 8px;
             border-radius: 999px;
-            font-size: 0.58rem;
+            font-size: 0.56rem;
             font-weight: 700;
-            letter-spacing: 0.065em;
+            letter-spacing: 0.055em;
             text-transform: uppercase;
             color: #fff;
             line-height: 1;
+            white-space: nowrap;
         }
 
-        .type-national { background: var(--navy); }
-        .type-university { background: var(--bluegray); }
-        .type-institute { background: var(--sage); }
+        .type-government { background: var(--government); }
+        .type-university { background: var(--university); }
+        .type-contract { background: var(--contract); }
 
         .status-ongoing {
-            background: rgba(111, 143, 124, 0.14);
-            color: #436655;
-            border: 1px solid rgba(111, 143, 124, 0.22);
+            color: var(--ongoing);
+            background: rgba(79, 118, 101, 0.10);
+            border: 1px solid rgba(79, 118, 101, 0.20);
         }
 
         .status-completed {
-            background: rgba(184, 154, 106, 0.15);
-            color: #7a6138;
-            border: 1px solid rgba(184, 154, 106, 0.22);
+            color: var(--completed);
+            background: rgba(138, 122, 100, 0.11);
+            border: 1px solid rgba(138, 122, 100, 0.20);
         }
 
         .project-name {
             display: block;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            color: #09090b;
-            line-height: 1.42;
-            letter-spacing: -0.018em;
-            margin-bottom: 8px;
+            color: #08080a;
+            line-height: 1.36;
+            letter-spacing: -0.017em;
+            margin-bottom: 5px;
         }
 
         .project-meta {
             display: block;
-            font-size: 0.79rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            line-height: 1.55;
+            line-height: 1.45;
             letter-spacing: -0.004em;
         }
 
-        .role {
-            color: #222226;
-            font-weight: 600;
-        }
-
+        .role,
         .agency {
             color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .role {
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
             .container {
-                margin: 34px auto 56px;
+                margin: 32px auto 52px;
                 padding: 0 20px;
             }
 
             h1 {
                 font-size: 2rem;
                 text-align: center;
-                margin-bottom: 36px;
+                margin-bottom: 32px;
             }
 
             nav {
@@ -211,24 +194,20 @@
 
             .project-row {
                 grid-template-columns: 1fr;
-                row-gap: 10px;
-                padding: 24px 0;
-            }
-
-            .project-row::before {
-                display: none;
+                row-gap: 7px;
+                padding: 19px 0;
             }
 
             .project-year {
                 font-size: 0.74rem;
             }
 
-            .project-content {
-                padding-left: 0;
+            .project-name {
+                font-size: 0.93rem;
             }
 
-            .project-name {
-                font-size: 0.96rem;
+            .project-meta {
+                font-size: 0.76rem;
             }
         }
     </style>
@@ -247,7 +226,7 @@
                 <div class="project-year">2026</div>
                 <div class="project-content">
                     <div class="project-top">
-                        <span class="pill type-institute">Institute</span>
+                        <span class="pill type-contract">Research Contract</span>
                         <span class="pill status-ongoing">Ongoing</span>
                     </div>
                     <span class="project-name">2026 AI Language Evaluation Operation and Related Event Organization</span>
@@ -262,7 +241,7 @@
                 <div class="project-year">2025 – 2026</div>
                 <div class="project-content">
                     <div class="project-top">
-                        <span class="pill type-national">National R&amp;D</span>
+                        <span class="pill type-government">Government-funded</span>
                         <span class="pill status-ongoing">Ongoing</span>
                     </div>
                     <span class="project-name">Multi-modal AI-based Personal Information Detection, Tracking, and De-identification Technology</span>
@@ -277,7 +256,7 @@
                 <div class="project-year">2025 – 2026</div>
                 <div class="project-content">
                     <div class="project-top">
-                        <span class="pill type-national">National R&amp;D</span>
+                        <span class="pill type-government">Government-funded</span>
                         <span class="pill status-ongoing">Ongoing</span>
                     </div>
                     <span class="project-name">Development of Personal Information De-identification Technology in Suspicious Criminal Information</span>
@@ -292,7 +271,7 @@
                 <div class="project-year">2025 – 2026</div>
                 <div class="project-content">
                     <div class="project-top">
-                        <span class="pill type-university">University</span>
+                        <span class="pill type-university">University-funded</span>
                         <span class="pill status-ongoing">Ongoing</span>
                     </div>
                     <span class="project-name">Cross-5: Development of Multilingual Benchmarks for Evaluating AI's Indirect Speech Act Capabilities</span>
@@ -307,7 +286,7 @@
                 <div class="project-year">2025</div>
                 <div class="project-content">
                     <div class="project-top">
-                        <span class="pill type-national">National R&amp;D</span>
+                        <span class="pill type-government">Government-funded</span>
                         <span class="pill status-completed">Completed</span>
                     </div>
                     <span class="project-name">Construction of Scalable Multi-modal Generative Foundation Model Data for Industrial AI Transformation</span>
@@ -322,7 +301,7 @@
                 <div class="project-year">2024 – 2025</div>
                 <div class="project-content">
                     <div class="project-top">
-                        <span class="pill type-university">University</span>
+                        <span class="pill type-university">University-funded</span>
                         <span class="pill status-completed">Completed</span>
                     </div>
                     <span class="project-name">Development of Korean-specific LLM Benchmarks for Evaluating Korean Language Proficiency</span>
