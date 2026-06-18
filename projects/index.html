@@ -6,21 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Xiaonan Wang</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --text-main: #1d1d1f;
-            --text-muted: #7a7a80;
-            --line: rgba(0, 0, 0, 0.08);
-            --card-bg: rgba(255, 255, 255, 0.82);
+            --text-main: #171719;
+            --text-muted: #77777d;
+            --text-soft: #a0a0a7;
+            --line: rgba(20, 20, 24, 0.075);
+            --line-strong: rgba(20, 20, 24, 0.12);
+            --bg: #fbfbfc;
 
             --navy: #172554;
-            --slate: #64748b;
-            --warm-gray: #a1a1aa;
-            --green: #3f7662;
-            --gold: #b88735;
+            --bluegray: #596779;
+            --sage: #6f8f7c;
+            --sand: #b89a6a;
+            --wine: #8f5d68;
         }
 
         body {
@@ -29,9 +32,9 @@
             line-height: 1.45;
             color: var(--text-main);
             background:
-                radial-gradient(circle at top left, rgba(23, 37, 84, 0.055), transparent 34%),
-                radial-gradient(circle at bottom right, rgba(184, 135, 53, 0.045), transparent 32%),
-                #fff;
+                radial-gradient(circle at 12% 8%, rgba(23, 37, 84, 0.045), transparent 28%),
+                radial-gradient(circle at 88% 18%, rgba(184, 154, 106, 0.045), transparent 26%),
+                linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
             -webkit-font-smoothing: antialiased;
         }
 
@@ -39,7 +42,7 @@
             display: flex;
             justify-content: flex-end;
             padding: 22px 10%;
-            background-color: rgba(255, 255, 255, 0.86);
+            background-color: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.055);
@@ -65,8 +68,8 @@
         }
 
         .container {
-            max-width: 880px;
-            margin: 60px auto;
+            max-width: 860px;
+            margin: 58px auto 78px;
             padding: 0 30px;
         }
 
@@ -80,118 +83,120 @@
         }
 
         .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
+            border-top: 1px solid var(--line-strong);
         }
 
         .project-row {
+            display: grid;
+            grid-template-columns: 118px 1fr;
+            column-gap: 34px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
             position: relative;
-            padding: 24px 26px 23px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card-bg);
-            box-shadow:
-                0 1px 1px rgba(0, 0, 0, 0.025),
-                0 12px 34px rgba(0, 0, 0, 0.045);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
         }
 
-        .project-row:hover {
-            transform: translateY(-2px);
-            border-color: rgba(23, 37, 84, 0.18);
-            box-shadow:
-                0 2px 4px rgba(0, 0, 0, 0.035),
-                0 18px 42px rgba(0, 0, 0, 0.07);
+        .project-row::before {
+            content: "";
+            position: absolute;
+            left: 118px;
+            top: 28px;
+            bottom: 28px;
+            width: 1px;
+            background: linear-gradient(
+                180deg,
+                rgba(23, 37, 84, 0.18),
+                rgba(23, 37, 84, 0.035)
+            );
         }
 
-        .tri-tag {
-            display: inline-flex;
-            overflow: hidden;
-            height: 22px;
-            margin-bottom: 13px;
-            border-radius: 999px;
-            font-size: 0.64rem;
-            font-weight: 700;
-            letter-spacing: 0.055em;
-            text-transform: uppercase;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
-        }
-
-        .tag-part {
-            padding: 0 10px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            color: #fff;
+        .project-year {
+            font-size: 0.78rem;
+            color: var(--text-soft);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            padding-top: 2px;
             white-space: nowrap;
         }
 
-        .t-type {
-            background: var(--navy);
+        .project-content {
+            padding-left: 28px;
         }
 
-        .t-status {
-            background: var(--slate);
+        .project-top {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
         }
 
-        .t-year {
-            background: var(--warm-gray);
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            height: 20px;
+            padding: 0 9px;
+            border-radius: 999px;
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.065em;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1;
         }
 
-        .project-row:nth-child(2) .t-status,
-        .project-row:nth-child(3) .t-status {
-            background: var(--green);
+        .type-national { background: var(--navy); }
+        .type-university { background: var(--bluegray); }
+        .type-institute { background: var(--sage); }
+
+        .status-ongoing {
+            background: rgba(111, 143, 124, 0.14);
+            color: #436655;
+            border: 1px solid rgba(111, 143, 124, 0.22);
         }
 
-        .project-row:nth-child(4) .t-status,
-        .project-row:nth-child(5) .t-status {
-            background: var(--gold);
+        .status-completed {
+            background: rgba(184, 154, 106, 0.15);
+            color: #7a6138;
+            border: 1px solid rgba(184, 154, 106, 0.22);
         }
 
         .project-name {
             display: block;
-            max-width: 760px;
-            font-size: 1.08rem;
+            font-size: 0.98rem;
             font-weight: 700;
-            color: #050505;
-            line-height: 1.38;
+            color: #09090b;
+            line-height: 1.42;
             letter-spacing: -0.018em;
             margin-bottom: 8px;
         }
 
-        .project-role {
-            display: inline-block;
-            font-size: 0.82rem;
-            color: #172554;
-            font-weight: 700;
-            margin-bottom: 8px;
-            padding: 4px 9px;
-            border-radius: 999px;
-            background: rgba(23, 37, 84, 0.065);
-            border: 1px solid rgba(23, 37, 84, 0.08);
+        .project-meta {
+            display: block;
+            font-size: 0.79rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            letter-spacing: -0.004em;
         }
 
-        .project-funding {
-            display: block;
-            font-size: 0.86rem;
+        .role {
+            color: #222226;
+            font-weight: 600;
+        }
+
+        .agency {
             color: var(--text-muted);
-            line-height: 1.5;
-            letter-spacing: -0.006em;
         }
 
         @media (max-width: 768px) {
             .container {
-                margin: 34px auto;
+                margin: 34px auto 56px;
                 padding: 0 20px;
             }
 
             h1 {
                 font-size: 2rem;
                 text-align: center;
-                margin-bottom: 34px;
+                margin-bottom: 36px;
             }
 
             nav {
@@ -205,22 +210,25 @@
             }
 
             .project-row {
-                padding: 21px 20px;
-                border-radius: 16px;
+                grid-template-columns: 1fr;
+                row-gap: 10px;
+                padding: 24px 0;
             }
 
-            .tri-tag {
-                height: auto;
-                flex-wrap: wrap;
-                border-radius: 12px;
+            .project-row::before {
+                display: none;
             }
 
-            .tag-part {
-                height: 22px;
+            .project-year {
+                font-size: 0.74rem;
+            }
+
+            .project-content {
+                padding-left: 0;
             }
 
             .project-name {
-                font-size: 1rem;
+                font-size: 0.96rem;
             }
         }
     </style>
@@ -236,58 +244,93 @@
         <div class="project-list">
 
             <div class="project-row">
-                <div class="tri-tag">
-                    <span class="tag-part t-type">National R&amp;D</span>
-                    <span class="tag-part t-status">Ongoing</span>
-                    <span class="tag-part t-year">2025 – 2026</span>
+                <div class="project-year">2026</div>
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="pill type-institute">Institute</span>
+                        <span class="pill status-ongoing">Ongoing</span>
+                    </div>
+                    <span class="project-name">2026 AI Language Evaluation Operation and Related Event Organization</span>
+                    <span class="project-meta">
+                        <span class="role">Researcher</span> ·
+                        <span class="agency">Funded by National Institute of Korean Language (NIKL)</span>
+                    </span>
                 </div>
-                <span class="project-name">Development of Personal Information De-identification Technology in Suspicious Criminal Information</span>
-                <span class="project-role">Researcher</span>
-                <span class="project-funding">Funded by Institute of Information &amp; Communications Technology Planning &amp; Evaluation (IITP)</span>
             </div>
 
             <div class="project-row">
-                <div class="tri-tag">
-                    <span class="tag-part t-type">National R&amp;D</span>
-                    <span class="tag-part t-status">Ongoing</span>
-                    <span class="tag-part t-year">2025 – 2026</span>
+                <div class="project-year">2025 – 2026</div>
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="pill type-national">National R&amp;D</span>
+                        <span class="pill status-ongoing">Ongoing</span>
+                    </div>
+                    <span class="project-name">Multi-modal AI-based Personal Information Detection, Tracking, and De-identification Technology</span>
+                    <span class="project-meta">
+                        <span class="role">Researcher &amp; Team Leader</span> ·
+                        <span class="agency">Funded by Korea Internet &amp; Security Agency (KISA)</span>
+                    </span>
                 </div>
-                <span class="project-name">Multi-modal AI-based Personal Information Detection, Tracking, and De-identification Technology</span>
-                <span class="project-role">Researcher &amp; Team Leader</span>
-                <span class="project-funding">Funded by Korea Internet &amp; Security Agency (KISA)</span>
             </div>
 
             <div class="project-row">
-                <div class="tri-tag">
-                    <span class="tag-part t-type">University</span>
-                    <span class="tag-part t-status">Ongoing</span>
-                    <span class="tag-part t-year">2025 – 2026</span>
+                <div class="project-year">2025 – 2026</div>
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="pill type-national">National R&amp;D</span>
+                        <span class="pill status-ongoing">Ongoing</span>
+                    </div>
+                    <span class="project-name">Development of Personal Information De-identification Technology in Suspicious Criminal Information</span>
+                    <span class="project-meta">
+                        <span class="role">Researcher</span> ·
+                        <span class="agency">Funded by Institute of Information &amp; Communications Technology Planning &amp; Evaluation (IITP)</span>
+                    </span>
                 </div>
-                <span class="project-name">Cross-5: Development of Multi-lingual Benchmarks for Evaluating AI's Indirect Speech Act Capabilities</span>
-                <span class="project-role">Researcher</span>
-                <span class="project-funding">Yonsei University AI Innovation Institute</span>
             </div>
 
             <div class="project-row">
-                <div class="tri-tag">
-                    <span class="tag-part t-type">National R&amp;D</span>
-                    <span class="tag-part t-status">Completed</span>
-                    <span class="tag-part t-year">2025</span>
+                <div class="project-year">2025 – 2026</div>
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="pill type-university">University</span>
+                        <span class="pill status-ongoing">Ongoing</span>
+                    </div>
+                    <span class="project-name">Cross-5: Development of Multilingual Benchmarks for Evaluating AI's Indirect Speech Act Capabilities</span>
+                    <span class="project-meta">
+                        <span class="role">Researcher</span> ·
+                        <span class="agency">Yonsei University AI Innovation Institute</span>
+                    </span>
                 </div>
-                <span class="project-name">Construction of Scalable Multi-modal Generative Foundation Model Data for Industrial AI Transformation</span>
-                <span class="project-role">Researcher</span>
-                <span class="project-funding">National Information Society Agency (NIA)</span>
             </div>
 
             <div class="project-row">
-                <div class="tri-tag">
-                    <span class="tag-part t-type">University</span>
-                    <span class="tag-part t-status">Completed</span>
-                    <span class="tag-part t-year">2024 – 2025</span>
+                <div class="project-year">2025</div>
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="pill type-national">National R&amp;D</span>
+                        <span class="pill status-completed">Completed</span>
+                    </div>
+                    <span class="project-name">Construction of Scalable Multi-modal Generative Foundation Model Data for Industrial AI Transformation</span>
+                    <span class="project-meta">
+                        <span class="role">Researcher</span> ·
+                        <span class="agency">Funded by National Information Society Agency (NIA)</span>
+                    </span>
                 </div>
-                <span class="project-name">Development of Korean-specific LLM Benchmarks for Evaluating Korean Language Proficiency</span>
-                <span class="project-role">Researcher</span>
-                <span class="project-funding">Yonsei University</span>
+            </div>
+
+            <div class="project-row">
+                <div class="project-year">2024 – 2025</div>
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="pill type-university">University</span>
+                        <span class="pill status-completed">Completed</span>
+                    </div>
+                    <span class="project-name">Development of Korean-specific LLM Benchmarks for Evaluating Korean Language Proficiency</span>
+                    <span class="project-meta">
+                        <span class="role">Researcher</span> ·
+                        <span class="agency">Yonsei University</span>
+                    </span>
+                </div>
             </div>
 
         </div>
