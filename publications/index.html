@@ -23,7 +23,7 @@
 
             --culture-text: #b8304f;
             --privacy-text: #ffbf45;
-            --geo-text: #4f8f6b;
+            --geo-text: #2f8a6f;
         }
 
         body {
@@ -110,15 +110,43 @@
         }
 
         .pub-thumb {
+            position: relative;
             width: 178px;
             height: 112px;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
             background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.07);
+
+            border: 1px solid rgba(33, 53, 139, 0.08);
+
             box-shadow:
-                0 5px 14px rgba(0, 0, 0, 0.075),
-                0 1px 3px rgba(0, 0, 0, 0.045);
+                0 12px 30px rgba(16, 24, 40, 0.06),
+                0 2px 8px rgba(16, 24, 40, 0.04);
+
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .pub-thumb::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.45) 0%,
+                    rgba(255, 255, 255, 0) 35%
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .pub-row:hover .pub-thumb {
+            transform: translateY(-2px);
+            box-shadow:
+                0 18px 38px rgba(16, 24, 40, 0.10),
+                0 4px 12px rgba(16, 24, 40, 0.05);
         }
 
         .pub-thumb img {
@@ -132,16 +160,21 @@
             position: absolute;
             top: -5px;
             left: 0;
-            z-index: 2;
+            z-index: 3;
+
             background: var(--ribbon-blue);
             color: #fff;
-            font-size: 0.6rem;
+
+            font-size: 0.62rem;
             font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 3px;
+            padding: 4px 10px;
+
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
             box-shadow:
-                0 1px 4px rgba(0, 0, 0, 0.14),
-                inset 0 1px 0 rgba(255, 255, 255, 0.16);
+                0 4px 12px rgba(33, 53, 139, 0.28);
+
             letter-spacing: -0.01em;
         }
 
@@ -190,14 +223,16 @@
 
         .topic-tag {
             display: inline-block;
-            font-size: 0.64rem;
+            font-size: 0.66rem;
             font-weight: 800;
-            padding: 3.5px 9px;
-            border-radius: 4px;
+            padding: 4px 10px;
+            border-radius: 5px;
             line-height: 1.25;
             color: #fff;
             letter-spacing: -0.01em;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.14),
+                0 2px 6px rgba(0, 0, 0, 0.06);
         }
 
         .topic-culture {
@@ -206,7 +241,7 @@
 
         .topic-privacy {
             background: var(--privacy-text);
-            color: #2b2208;
+            color: #ffffff;
         }
 
         .topic-geo {
