@@ -19,11 +19,11 @@
             --text-muted: #5f6368;
             --line: #eeeeee;
 
-            --ribbon-blue: #18375c;
+            --ribbon-blue: #21358b;
 
-            --culture-text: #c9865b;
-            --privacy-text: #858cc7;
-            --geo-text: #6fa99b;
+            --culture-text: #b8304f;
+            --privacy-text: #ffbf45;
+            --geo-text: #4f8f6b;
         }
 
         body {
@@ -131,17 +131,17 @@
         .venue-ribbon {
             position: absolute;
             top: -5px;
-            left: 6px;
+            left: 0;
             z-index: 2;
             background: var(--ribbon-blue);
             color: #fff;
-            font-size: 0.54rem;
+            font-size: 0.6rem;
             font-weight: 800;
-            padding: 2px 7px;
+            padding: 3px 8px;
             border-radius: 3px;
             box-shadow:
                 0 1px 4px rgba(0, 0, 0, 0.14),
-                inset 0 1px 0 rgba(255, 255, 255, 0.18);
+                inset 0 1px 0 rgba(255, 255, 255, 0.16);
             letter-spacing: -0.01em;
         }
 
@@ -184,16 +184,16 @@
 
         .topic-tags {
             display: flex;
-            gap: 5px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .topic-tag {
             display: inline-block;
-            font-size: 0.58rem;
+            font-size: 0.64rem;
             font-weight: 800;
-            padding: 2.5px 8px;
-            border-radius: 3px;
+            padding: 3.5px 9px;
+            border-radius: 4px;
             line-height: 1.25;
             color: #fff;
             letter-spacing: -0.01em;
@@ -206,6 +206,7 @@
 
         .topic-privacy {
             background: var(--privacy-text);
+            color: #2b2208;
         }
 
         .topic-geo {
@@ -329,7 +330,6 @@
         </div>
     </div>
 
-    
     <div class="pub-row">
         <div class="pub-thumb-wrap">
             <div class="venue-ribbon">RANLP 2025</div>
@@ -351,7 +351,6 @@
 
     <div class="pub-row">
         <div class="pub-thumb-wrap">
-            <div class="venue-ribbon">SCIE</div>
             <div class="pub-thumb">
                 <img src="/assets/css/images/app.png" alt="">
             </div>
