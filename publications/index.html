@@ -18,11 +18,12 @@
             --text-main: #1d1d1f;
             --text-muted: #5f6368;
             --line: #eeeeee;
-            --ribbon-blue: #2c4f7d;
 
-            --culture-text: #d86b21;
-            --privacy-text: #4f5bd5;
-            --geo-text: #138a72;
+            --ribbon-blue: rgba(34, 63, 102, 0.92);
+
+            --culture-text: #b9632c;
+            --privacy-text: #5861b8;
+            --geo-text: #2f8171;
         }
 
         body {
@@ -114,8 +115,10 @@
             border-radius: 8px;
             overflow: hidden;
             background: #ffffff;
-            border: 1px solid #e8e8e8;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            box-shadow:
+                0 5px 14px rgba(0, 0, 0, 0.075),
+                0 1px 3px rgba(0, 0, 0, 0.045);
         }
 
         .pub-thumb img {
@@ -130,13 +133,19 @@
             top: -5px;
             left: 6px;
             z-index: 2;
-            background: var(--ribbon-blue);
+            background: linear-gradient(
+                135deg,
+                rgba(48, 84, 132, 0.96),
+                rgba(25, 48, 82, 0.96)
+            );
             color: #fff;
-            font-size: 0.56rem;
+            font-size: 0.54rem;
             font-weight: 800;
             padding: 2px 7px;
             border-radius: 3px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+            box-shadow:
+                0 1px 4px rgba(0, 0, 0, 0.16),
+                inset 0 1px 0 rgba(255, 255, 255, 0.22);
             letter-spacing: -0.01em;
         }
 
@@ -179,18 +188,20 @@
 
         .topic-tags {
             display: flex;
-            gap: 6px;
+            gap: 5px;
             flex-wrap: wrap;
         }
 
         .topic-tag {
             display: inline-block;
-            font-size: 0.64rem;
-            font-weight: 700;
-            padding: 3px 7px;
-            border-radius: 999px;
+            font-size: 0.54rem;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 3px;
             line-height: 1.25;
             color: #fff;
+            letter-spacing: -0.01em;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
         }
 
         .topic-culture {
