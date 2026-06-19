@@ -14,9 +14,6 @@
             --text-main: #1d1d1f;
             --text-muted: #5f6368;
             --line: #eeeeee;
-
-            --service-blue: #21358b;
-            --service-gray: #828282;
         }
 
         body {
@@ -89,42 +86,34 @@
 
         .service-row {
             display: grid;
-            grid-template-columns: 1fr 110px;
+            grid-template-columns: 1fr 120px;
             gap: 28px;
-            padding: 16px 0;
+            padding: 13px 0;
             border-bottom: 1px solid var(--line);
-            align-items: start;
+            align-items: center;
         }
 
         .service-main {
             min-width: 0;
-        }
-
-        .service-name {
-            display: block;
+            font-size: 0.9rem;
+            line-height: 1.38;
             color: #000;
-            font-size: 0.92rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            line-height: 1.34;
             letter-spacing: -0.01em;
         }
 
-        .service-meta {
-            display: block;
-            font-size: 0.8rem;
-            color: #333;
-            line-height: 1.45;
-        }
-
         .service-role {
-            font-weight: 700;
+            font-weight: 800;
             color: #000;
         }
 
+        .service-item {
+            font-weight: 600;
+            color: #222;
+        }
+
         .service-inst {
-            color: #333;
             font-weight: 500;
+            color: #555;
         }
 
         .service-year {
@@ -132,37 +121,7 @@
             font-size: 0.78rem;
             color: var(--text-muted);
             font-weight: 600;
-            padding-top: 2px;
             white-space: nowrap;
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: 0.64rem;
-            font-weight: 800;
-            padding: 3.5px 9px;
-            border-radius: 4px;
-            line-height: 1.25;
-            color: #fff;
-            letter-spacing: -0.01em;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
-            margin-bottom: 7px;
-        }
-
-        .tag-reviewing {
-            background: var(--service-blue);
-        }
-
-        .tag-teaching {
-            background: var(--service-blue);
-        }
-
-        .tag-supervision {
-            background: var(--service-blue);
-        }
-
-        .tag-professional {
-            background: var(--service-blue);
         }
 
         @media (max-width: 768px) {
@@ -188,22 +147,17 @@
 
             .service-row {
                 grid-template-columns: 1fr;
-                gap: 7px;
-                padding: 16px 0;
+                gap: 4px;
+                padding: 14px 0;
             }
 
             .service-year {
                 text-align: left;
                 font-size: 0.76rem;
-                order: -1;
             }
 
-            .service-name {
-                font-size: 0.9rem;
-            }
-
-            .service-meta {
-                font-size: 0.78rem;
+            .service-main {
+                font-size: 0.86rem;
             }
         }
     </style>
@@ -219,97 +173,61 @@
     <div class="section-title">Reviewing</div>
 
     <div class="service-list">
-
         <div class="service-row">
             <div class="service-main">
-                <span class="tag tag-reviewing">Reviewer</span>
-                <span class="service-name">EMNLP 2026</span>
-                <span class="service-meta">
-                    <span class="service-role">Reviewer</span>
-                </span>
+                <span class="service-role">Reviewer</span> · <span class="service-item">EMNLP 2026</span>
             </div>
             <div class="service-year">2026</div>
         </div>
 
         <div class="service-row">
             <div class="service-main">
-                <span class="tag tag-reviewing">Reviewer</span>
-                <span class="service-name">ACL SRW 2025</span>
-                <span class="service-meta">
-                    <span class="service-role">Reviewer</span>
-                </span>
+                <span class="service-role">Reviewer</span> · <span class="service-item">ACL SRW 2025</span>
             </div>
             <div class="service-year">2025</div>
         </div>
-
     </div>
 
     <div class="section-title">Teaching</div>
 
     <div class="service-list">
-
         <div class="service-row">
             <div class="service-main">
-                <span class="tag tag-teaching">Teaching Assistant</span>
-                <span class="service-name">Digital Language Data and Humanities</span>
-                <span class="service-meta">
-                    <span class="service-role">Teaching Assistant</span> ·
-                    <span class="service-inst">Yonsei University</span>
-                </span>
+                <span class="service-role">Teaching Assistant</span> · <span class="service-item">Digital Language Data and Humanities</span> · <span class="service-inst">Yonsei University</span>
             </div>
             <div class="service-year">Spring 2026</div>
         </div>
 
         <div class="service-row">
             <div class="service-main">
-                <span class="tag tag-teaching">Teaching Assistant</span>
-                <span class="service-name">Computational Analysis of Language</span>
-                <span class="service-meta">
-                    <span class="service-role">Teaching Assistant</span> ·
-                    <span class="service-inst">Yonsei University</span>
-                </span>
+                <span class="service-role">Teaching Assistant</span> · <span class="service-item">Computational Analysis of Language</span> · <span class="service-inst">Yonsei University</span>
             </div>
-            <div class="service-year">Autumn 2025</div>
+            <div class="service-year">Fall 2025</div>
         </div>
-
     </div>
 
     <div class="section-title">Research Supervision</div>
 
     <div class="service-list">
-
         <div class="service-row">
             <div class="service-main">
-                <span class="tag tag-supervision">Project Supervisor</span>
-                <span class="service-name">Topics in Language and Information 1</span>
-                <span class="service-meta">
-                    <span class="service-role">Project Supervisor</span> ·
-                    <span class="service-inst">Yonsei University</span>
-                </span>
+                <span class="service-role">Project Supervisor</span> · <span class="service-item">Topics in Language and Information 1</span> · <span class="service-inst">Yonsei University</span>
             </div>
             <div class="service-year">Spring 2026</div>
         </div>
-
     </div>
 
     <div class="section-title">Professional Service</div>
 
     <div class="service-list">
-
         <div class="service-row">
             <div class="service-main">
-                <span class="tag tag-professional">Executive Member</span>
-                <span class="service-name">Korean Association for Corpus Linguistics (KACL)</span>
-                <span class="service-meta">
-                    <span class="service-role">Executive Member</span>
-                </span>
+                <span class="service-role">Executive Member</span> · <span class="service-item">Korean Association for Corpus Linguistics (KACL)</span>
             </div>
             <div class="service-year">2025</div>
         </div>
-
     </div>
 </div>
 
 </body>
 </html>
-```
